@@ -4,4 +4,4 @@
 node_modules/
 platforms/
 plugins/
-App/www/lib/
+client/www/lib/
