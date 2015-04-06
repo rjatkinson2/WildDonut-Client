@@ -1,0 +1,32 @@
+<div>
+  <h1>Teacher Settings</h1>
+  <form>
+
+    <div>
+      <label for="username">Username: </label>
+      <input type="text" name="username" ng-model="user.name" required>
+    </div>
+
+    <div>
+      <label for="location">Location: </label>
+      <input type="text" name="location" ng-model="user.location" required>
+    </div>
+
+    <div>
+      <label for="bio">bio: </label>
+      <input type="text" name="bio" ng-model="user.bio" required>
+    </div>
+
+    <div>
+      <label for="skill">skill: </label>
+      <input type="text" name="skill" ng-model="user.skill" required>
+    </div>
+
+    <div>
+      <label for="paymentOptions">paymentOptions: </label>
+      <input type="text" name="paymentOptions" ng-model="user.paymentOptions" required>
+    </div>
+
+    <button type="submit" value="Submit" ng-click="updateTeacherSettings()">Update teacher</button>
+  </form>
+</div>
