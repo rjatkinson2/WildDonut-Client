@@ -28,40 +28,45 @@
           templateUrl: 'app/browse/browse.html',
           controller: 'BrowseController'
         })  
-        .state('studentSettings', {
-          url: '/student/:username/settings',
-          templateUrl: 'app/student/student-settings/student-settings.html',
-          controller: 'StudentSettingsController'
+        .state('profileView', {
+          url: '/:username/profile',
+          templateUrl: 'app/profile/profile-view/profile-view.html',
+          controller: 'ProfileViewController'
         })
-        .state('studentProfile', {
-          url: '/student/:username',
-          templateUrl: 'app/student/student-profile/student-profile.html',
-          controller: 'StudentProfileController'
+        .state('profileSettings', {
+          url: '/:username/profile/settings',
+          templateUrl: 'app/profile/profile-settings/profile-settings.html',
+          controller: 'ProfileSettingsController'
         })
-        .state('studentBookings', {
-          url: '/student/:username/bookings',
-          templateUrl: 'app/student/student-bookings/student-bookings.html',
-          controller: 'StudentBookingsController'
+        .state('studentManageClasses', {
+          url: '/:username/student/classes/manage',
+          templateUrl: 'app/student/student-manage-classes/student-manage-classes.html',
+          controller: 'StudentManageClassesController'
         })
-        .state('teacherSettings', {
-          url: '/teacher/:username/settings',
-          templateUrl: 'app/teacher/teacher-settings/teacher-settings.html',
-          controller: 'TeacherSettingsController'
+        .state('teacherManageClasses', {
+          url: '/:username/teacher/classes/manage',
+          templateUrl: 'app/teacher/teacher-manage-classes/teacher-manage-classes.html',
+          controller: 'TeacherManageClassesController'
         })
-        .state('teacherProfile', {
-          url: '/teacher/:username',
-          templateUrl: 'app/teacher/teacher-profile/teacher-profile.html',
-          controller: 'TeacherProfileController'
+        .state('teacherBookedClasses', {
+          url: '/:username/teacher/classes/booked',
+          templateUrl: 'app/teacher/teacher-booked-classes/teacher-booked-classes.html',
+          controller: 'TeacherBookedClassesController'
         })
-        .state('teacherCreateBookings', {
-          url: '/teacher/:username/bookings/new',
-          templateUrl: 'app/teacher/teacher-create-bookings/teacher-create-bookings.html',
-          controller: 'TeacherCreateBookingsController'
+        .state('teacherCreateClass', {
+          url: '/:username/teacher/classes/new',
+          templateUrl: 'app/teacher/teacher-create-class/teacher-create-class.html',
+          controller: 'TeacherCreateClassController'
         })
-        .state('teacherBookings', {
-          url: '/teacher/:username/bookings',
-          templateUrl: 'app/teacher/teacher-bookings/teacher-bookings.html',
-          controller: 'TeacherBookingsController'
+        .state('teacherEditClass', {
+          url: '/:username/teacher/classes/:id/edit',
+          templateUrl: 'app/teacher/teacher-edit-class/teacher-edit-class.html',
+          controller: 'TeacherEditClassController'
+        })
+        .state('viewClass', {
+          url: '/:username/teacher/classes/:id',
+          templateUrl: 'app/teacher/view-class/view-class.html',
+          controller: 'ViewClassController'
         });
     })
     .run(function($ionicPlatform) {
