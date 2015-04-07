@@ -4,9 +4,9 @@
     .module('wildDonut')
     .factory('Auth', Auth);
 
-  Auth.$inject = ['$http'];
+  Auth.$inject = ['$http', 'State'];
 
-  function Auth($http){
+  function Auth($http, State){
 
     var instance = {
       login: login,
@@ -25,6 +25,7 @@
         url: 'NEED TO FILL OUT',
         data: user
       }).then(function(response){
+        State.user = response.data.user.username
         return response;
       });
     }
@@ -35,6 +36,7 @@
         url: 'NEED TO FILL OUT',
         data: user
       }).then(function(response){
+        State.user = response.data.user.username
         return response;
       });
     }
