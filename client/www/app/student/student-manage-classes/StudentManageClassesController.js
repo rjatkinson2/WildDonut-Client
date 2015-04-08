@@ -7,9 +7,19 @@
     StudentManageClassesController.$inject = ['$scope', 'ClassManager'];
 
     function StudentManageClassesController($scope, ClassManager) {
-      ClassManager.getBookedStudentClasses().then(function(classes) {
-        $scope.classes = classes.data;
-      });
+
+      $scope.getBookedStudentClasses = function() {
+        ClassManager.getBookedStudentClasses().then(function(classes) {
+          $scope.classes = classes.data;
+        });
+      }
+
+      $scope.init = function() {
+        $scope.getBookedStudentClasses();
+      };
+
+      $scope.init();
+
     }
 
 })();

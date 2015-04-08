@@ -8,8 +8,6 @@
 
   function ClassManager($http, State){
 
-    var hostUrl = process.env.HOST_URL || 'localhost:4568';
-
     var instance = {
       createClass: createClass,
       editClass: editClass,
@@ -24,10 +22,10 @@
 
     return instance;
 
-  //////////////////////////////
-  //////  IMPLEMENTATION  //////
-  //////////////////////////////
+    // sets the full URL for methods
+    var hostUrl = process.env.HOST_URL || 'localhost:4568'
 
+    // implementation of functions
     function createClass(classInformation){
       return $http({
         method: 'POST',
@@ -143,6 +141,3 @@
   }
 
 })();
-
-
-
