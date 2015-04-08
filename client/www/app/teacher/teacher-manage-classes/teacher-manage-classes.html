@@ -1,0 +1,19 @@
+<div>
+
+  <button on-click="addClass()">Add New Class</button>
+
+  <div ng-repeat="class in allClasses">
+
+    class_name: {{class.class_name}}<br>
+
+    class_id: {{class.class_id}}<br>
+
+    description: {{class.description}}<br>
+
+    <button on-click="editClass(class.class_id)">Edit Class</button>
+    <button on-click="deleteClass(class.class_id)">Delete Class</button>
+
+  </div>
+
+
+</div>
