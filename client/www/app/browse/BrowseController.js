@@ -7,9 +7,19 @@
     BrowseController.$inject = ['$scope', 'CollectionManager'];
 
     function BrowseController($scope, CollectionManager) {
-      CollectionManager.getAvailableClasses().then(function(classes) {
-        $scope.classes = classes.data;
-      });
+
+      $scope.getAvailableClasses = function() {
+        CollectionManager.getAvailableClasses().then(function(classes) {
+          $scope.classes = classes.data;
+        });
+      }
+
+      $scope.init = function() {
+        $scope.getAvailableClasses();
+      };
+
+      $scope.init();
+
     }
 
 })();

@@ -15,12 +15,10 @@
 
     return instance;
 
-    //////////////////////////
-    //////IMPLEMENTATION//////
-    //////////////////////////
-
+    // sets the full URL for methods
     var hostUrl = process.env.HOST_URL || 'localhost:4568'
 
+    // implementation of functions
     function login(user){
       return $http({
         method: 'POST',
