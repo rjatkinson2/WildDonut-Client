@@ -1,27 +1,37 @@
 <div>
-  <h1>Create Booking</h1>
+  <h1>Create Classes View</h1>
   <form>
 
     <div>
-      <label for="bookingName">Booking Name: </label>
-      <input type="text" name="bookingname" ng-model="booking.name" required>
+      <label for="ClassName">Class Name: </label>
+      <input type="text" name="classname" ng-model="classInformation.class_name" required>
     </div>
 
     <div>
-      <label for="expertise">expertise: </label>
-      <input type="text" name="expertise" ng-model="booking.expertise" required>
+      <label for="description">description: </label>
+      <input type="text" name="description" ng-model="classInformation.description" required>
     </div>
 
     <div>
       <label for="rate">rate: </label>
-      <input type="text" name="rate" ng-model="booking.rate" required>
+      <input type="text" name="rate" ng-model="classInformation.rate" required>
     </div>
 
     <div>
-      <label for="availability">availability: </label>
-      <input type="text" name="availability" ng-model="booking.availability" required>
+      <label for="date">date: </label>
+      <input type="text" name="date" ng-model="classInformation.date" required>
     </div>
 
-    <button type="submit" value="Submit" ng-click="createBooking()">Create Booking</button>
+    <div>
+      <label for="time">time: </label>
+      <input type="text" name="time" ng-model="classInformation.time" required>
+    </div>
+
+    <div>
+      <label for="location">location: </label>
+      <input type="text" name="location" ng-model="classInformation.location" required>
+    </div>
+
+    <button type="submit" value="Submit" ng-click="createClass()">Create Class</button>
   </form>
 </div>
