@@ -1,0 +1,20 @@
+<h1>Profile Settings</h1>
+<form>
+  <div class="list">
+    <label class="item item-input">
+      <input type="text" placeholder="First Name" ng-model="profile.first_name">
+    </label>
+    <label class="item item-input">
+      <input type="text" placeholder="Last Name" ng-model="profile.last_name">
+    </label>
+    <label class="item item-input">
+      <textarea placeholder="Bio" ng-model="profile.bio"></textarea>
+    </label>
+    <label class="item item-input">
+      <input type="text" placeholder="Picture Url" ng-model="profile.picture_url">
+    </label>
+    <label ng-if="isTeacher" class="item item-input">
+      <input type="text" placeholder="Skills" ng-model="profile.skills">
+    </label>
+  </div>
+</form>

@@ -1,0 +1,7 @@
+<h1>Profile</h1>
+<div>{{ profile.first_name }}</div>
+<div>{{ profile.last_name }}</div>
+<div>{{ profile.username }}</div>
+<div>{{ profile.bio }}</div>
+<img ng-src="{{ picture_url }}" />
+<div ng-if="isTeacher">{{ profile.skills }}</div>
