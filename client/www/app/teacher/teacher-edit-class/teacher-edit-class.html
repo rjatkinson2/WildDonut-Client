@@ -1,0 +1,27 @@
+<div>
+  <form>
+    class_name: {{classInformation.class_name}}<br>
+    <input type="text" name="classname" ng-model="classInformation.class_name" required>
+
+    description: {{classInformation.description}}<br>
+    <input type="text" name="description" ng-model="classInformation.description" required>
+
+
+    rate ($): {{classInformation.rate}}<br>
+    <input type="text" name="rate" ng-model="classInformation.rate" required>
+
+
+    date: {{classInformation.date}}<br>
+    <input type="text" name="date" ng-model="classInformation.date" required>
+
+
+    time: {{classInformation.time}}<br>
+    <input type="text" name="time" ng-model="classInformation.time" required>
+
+
+    location: {{classInformation.location}}<br>
+    <input type="text" name="location" ng-model="classInformation.location" required>
+
+    <button type="submit" value="Submit" ng-click="updateClass()">Update Class</button>
+  </form>
+</div>
