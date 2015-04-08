@@ -8,9 +8,7 @@
 
   function State(){
 
-    var instance = {
-      user: user
-    };
+    var instance = {};
 
     return instance;
   }
