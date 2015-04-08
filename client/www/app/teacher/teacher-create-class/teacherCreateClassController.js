@@ -2,13 +2,13 @@
 
   angular
     .module('wildDonut')
-    .controller('TeacherCreateBookingsController', TeacherCreateBookingsController);
+    .controller('TeacherCreateClassController', TeacherCreateClassController);
 
-  TeacherCreateBookingsController.$inject = ['$scope', 'BookingHandler'];
+  TeacherCreateClassController.$inject = ['$scope', 'ClassManager'];
 
-  function TeacherCreateBookingsController($scope, BookingHandler){
-    $scope.createBooking = function(){
-      BookingHandler.createBooking($scope.booking);
+  function TeacherCreateClassController($scope, ClassManager){
+    $scope.createClass = function(){
+      ClassManager.createClass($scope.classInformation);
     };
   }
 
