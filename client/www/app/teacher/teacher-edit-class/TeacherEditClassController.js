@@ -11,10 +11,8 @@
     $scope.class_id = $stateParams.id;
 
     $scope.getClass = function(){
-      ClassManager.getClass($scope.class_id).then(function(response){
-        $scope.apply(function(){
-          $scope.classInformation = response;
-        });
+      ClassManager.getClass($scope.class_id).then(function(classInfo){
+        $scope.classInformation = classInfo;
       });
     };
 
@@ -23,7 +21,6 @@
         console.log(response);
       });
     };
-
 
     $scope.init = function(){
       $scope.getClass();

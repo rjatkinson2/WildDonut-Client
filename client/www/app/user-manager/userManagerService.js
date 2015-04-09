@@ -15,14 +15,11 @@
 
       return instance;
 
-      // sets the full URL for methods
-      var hostUrl = process.env.HOST_URL || 'localhost:4568';
-
       // implementation of functions
       function saveProfileData(user) {
         return $http({
           method: 'POST',
-          url: hostUrl + '/api/users/' + State.username,
+          url: 'http://localhost:4568/api/users/' + State.username,
           headers: {
             'Content-Type': 'application/json'
           },
@@ -35,7 +32,7 @@
       function getProfileData() {
         return $http({
           method: 'GET',
-          url: hostUrl + '/api/users/' + State.username,
+          url: 'http://localhost:4568/api/users/' + State.username,
           headers: {
             'Content-Type': 'application/json'
           }

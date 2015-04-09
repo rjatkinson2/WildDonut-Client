@@ -9,10 +9,8 @@
   function TeacherManageClassesController($scope, $location, ClassManager, State){
 
     $scope.getAllClasses = function(){
-      ClassManager.getAllTeacherClasses().then(function(response){
-        $scope.$apply(function(){
-          $scope.allClasses = response.data;
-        });
+      ClassManager.getAllTeacherClasses().then(function(classes){
+        $scope.allClasses = classes;
       });
     };
 
@@ -26,6 +24,7 @@
 
     $scope.deleteClass = function(class_id){
       ClassManager.deleteClass(class_id);
+      $scope.getAllClasses();
     };
 
     $scope.init = function(){

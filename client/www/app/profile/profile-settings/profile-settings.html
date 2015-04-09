@@ -2,7 +2,7 @@
 <form>
   <div class="list">
     <label class="item item-input">
-      <input type="text" placeholder="First Name" ng-model="profile.first_name">
+      <input type="text" placeholder="{{profile.first_name}}" ng-model="profile.first_name">
     </label>
     <label class="item item-input">
       <input type="text" placeholder="Last Name" ng-model="profile.last_name">
@@ -17,4 +17,5 @@
       <input type="text" placeholder="Skills" ng-model="profile.skills">
     </label>
   </div>
+  <button type="submit" value="Submit" ng-click="saveSettings()">Save new settings</button>
 </form>

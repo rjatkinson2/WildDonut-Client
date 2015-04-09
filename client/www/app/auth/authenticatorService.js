@@ -15,21 +15,18 @@
 
     return instance;
 
-    // sets the full URL for methods
-    var hostUrl = process.env.HOST_URL || 'localhost:4568'
-
     // implementation of functions
     function login(user){
       return $http({
         method: 'POST',
-        url: hostUrl + '/api/users/login',
+        url: 'http://localhost:4568/api/users/login',
         data: user,
         headers: {
           'Content-Type': 'application/json',
         }
       }).then(function(response){
-        State.username = response.data.user.username
-        State.isTeacher = response.data.user.teacher
+        State.username = response.data.username
+        State.isTeacher = response.data.teacher
         return response;
       });
     }
@@ -37,14 +34,14 @@
     function signup(user){
       return $http({
         method: 'POST',
-        url: hostUrl + ' /api/users/signup',
+        url: 'http://localhost:4568/api/users/signup',
         data: user,
         headers: {
           'Content-Type': 'application/json',
         }
       }).then(function(response){
-        State.username = response.data.user.username
-        State.isTeacher = response.data.user.teacher
+        State.username = response.data.username
+        State.isTeacher = response.data.teacher
         return response;
       });
     }
