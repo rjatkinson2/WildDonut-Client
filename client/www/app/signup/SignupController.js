@@ -4,16 +4,14 @@
     .module('wildDonut')
     .controller('SignupController', SignupController);
 
-  SignupController.$inject = ['$scope', '$location', 'Auth'];
+  SignupController.$inject = ['$scope', '$location', 'Authenticator'];
 
-  function SignupController($scope, $location, Auth){
+  function SignupController($scope, $location, Authenticator){
 
-    //defers to the Auth factory to handle
+    //defers to the Authenticator factory to handle
     //interaction with server and signUp process
     $scope.signup = function(){
-      Auth.signup($scope.user).then(function(response){
-        console.log('Successful', response);
-        //redirects you to home page if successful login
+      Authenticator.signup($scope.user).then(function(response){
         $location.path('/');
       }).catch(function(error){
         console.log(error);

@@ -10,7 +10,7 @@
 
       $scope.getAvailableClasses = function() {
         CollectionManager.getAvailableClasses().then(function(classes) {
-          $scope.classes = classes.data;
+          $scope.classes = classes;
         });
       }
 

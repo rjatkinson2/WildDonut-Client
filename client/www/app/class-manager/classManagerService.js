@@ -17,19 +17,16 @@
       getAvailableTeacherClasses: getAvailableTeacherClasses,
       getClass: getClass,
       getBookedStudentClasses: getBookedStudentClasses,
-      signUpForClass: signUpForClass
+      bookClass: bookClass
     };
 
     return instance;
 
-    // sets the full URL for methods
-    var hostUrl = process.env.HOST_URL || 'localhost:4568'
-
     // implementation of functions
-    function createClass(classInformation){
+    function createClass(classInformation)
       return $http({
         method: 'POST',
-        url: hostUrl + '/api/users/' + State.username + '/teacher/classes/',
+        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes',
         data: classInformation,
         headers: {
           'Content-Type': 'application/json'
@@ -42,7 +39,7 @@
     function editClass(classInformation, classId){
       return $http({
         method: 'POST',
-        url: hostUrl + '/api/users/' + State.username + '/teacher/classes/' + classId,
+        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/' + classId,
         data: classInformation,
         headers: {
           'Content-Type': 'application/json'
@@ -55,8 +52,7 @@
     function deleteClass(classId){
       return $http({
         method: 'DELETE',
-        url: hostUrl + '/api/users/' + State.username + '/teacher/classes/' + classId,
-        data: classId,
+        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/' + classId,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -68,67 +64,67 @@
     function getAllTeacherClasses(){
       return $http({
         method: 'GET',
-        url: hostUrl + '/api/users/' + State.username + '/teacher/classes/',
+        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes',
         headers: {
           'Content-Type': 'application/json'
         }
-      }).then(function(data){
-        return data;
+      }).then(function(response){
+        return response.data;
       });
     }
 
     function getBookedTeacherClasses(){
       return $http({
         method: 'GET',
-        url: hostUrl + '/api/users/' + State.username + '/teacher/classes/booked',
+        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/booked',
         headers: {
           'Content-Type': 'application/json'
         }
-      }).then(function(data){
-        return data;
+      }).then(function(response){
+        return response.data;
       });
     }
 
     function getAvailableTeacherClasses(){
       return $http({
         method: 'GET',
-        url: hostUrl + '/api/users/' + State.username + '/teacher/classes/available',
+        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/available',
         headers: {
           'Content-Type': 'application/json'
         }
-      }).then(function(data){
-        return data;
+      }).then(function(response){
+        return response.data;
       });
     }
 
     function getClass(classId){
       return $http({
         method: 'GET',
-        url: hostUrl + '/api/users/' + State.username + '/teacher/classes/booked' + classId,
+        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/' + classId,
         headers: {
           'Content-Type': 'application/json'
         }
-      }).then(function(data){
-        return data;
+      }).then(function(response){
+        return response.data;
       });
     }
 
     function getBookedStudentClasses(){
       return $http({
         method: 'GET',
-        url: hostUrl + '/api/users/' + State.username + '/student/classes/booked',
+        url: 'http://localhost:4568/api/users/' + State.username + '/student/classes/booked',
         headers: {
           'Content-Type': 'application/json'
         }
-      }).then(function(data){
-        return data;
+      }).then(function(response){
+        return response.data;
       });
     }
 
-    function signUpForClass(bookingDetails){
+    function bookClass(bookingDetails){
       return $http({
         method: 'POST',
-        url: hostUrl + '/api/users/' + State.username + '/student/classes/booked',
+        url: 'http://localhost:4568/api/users/' + State.username + '/student/classes/booked',
         data: bookingDetails,
         headers: {
           'Content-Type': 'application/json'

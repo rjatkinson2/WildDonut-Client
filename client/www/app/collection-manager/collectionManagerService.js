@@ -14,19 +14,16 @@
 
       return instance;
 
-      // sets the full URL for methods
-      var hostUrl = process.env.HOST_URL || 'localhost:4568';
-
       // implementation of functions
       function getAvailableClasses() {
         return $http({
           method: 'GET',
-          url: '/api/classes',
+          url: 'http://localhost:4568/api/classes',
           headers: {
             'Content-Type': 'application/json'
           }
-        }).then(function(data) {
-          return data;
+        }).then(function(response) {
+          return response.data;
         });
       }
 

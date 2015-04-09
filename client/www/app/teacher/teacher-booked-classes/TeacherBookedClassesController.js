@@ -9,10 +9,8 @@
   function TeacherBookedClassesController($scope, ClassManager){
 
     $scope.refreshClasses = function(){
-      ClassManager.getBookedTeacherClasses().then(function(response){
-        $scope.apply(function(){
-          $scope.bookedClasses = response.data.bookedClasses;
-        });
+      ClassManager.getBookedTeacherClasses().then(function(classes){
+        $scope.bookedClasses = classes;
       });
     };
 

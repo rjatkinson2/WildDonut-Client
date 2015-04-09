@@ -9,7 +9,7 @@
     function ProfileViewController($scope, UserManager, State) {
 
       $scope.isTeacher = State.isTeacher;
-      
+
       $scope.getProfileData = function() {
         UserManager.getProfileData().then(function(profile) {
           $scope.profile = profile.data;
