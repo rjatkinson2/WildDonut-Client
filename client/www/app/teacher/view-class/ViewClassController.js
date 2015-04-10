@@ -16,7 +16,7 @@
     };
 
     $scope.bookClass = function(){
-      $scope.classInformation.student_username = State.username;
+      $scope.classInformation.student_id = State.user_id;
       $scope.classInformation.class_id = $scope.classInformation._id;
 
       ClassManager.bookClass($scope.classInformation).then(function(response){

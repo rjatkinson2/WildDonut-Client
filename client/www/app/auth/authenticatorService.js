@@ -25,8 +25,9 @@
           'Content-Type': 'application/json',
         }
       }).then(function(response){
-        State.username = response.data.username
-        State.isTeacher = response.data.teacher
+        State.username = response.data.username;
+        State.user_id = response.data._id;
+        State.isTeacher = response.data.teacher;
         return response;
       });
     }
@@ -40,8 +41,9 @@
           'Content-Type': 'application/json',
         }
       }).then(function(response){
-        State.username = response.data.username
-        State.isTeacher = response.data.teacher
+        State.username = response.data.username;
+        State.user_id = response.data._id;
+        State.isTeacher = response.data.teacher;
         return response;
       });
     }
