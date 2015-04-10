@@ -23,7 +23,7 @@
     return instance;
 
     // implementation of functions
-    function createClass(classInformation)
+    function createClass(classInformation){
       return $http({
         method: 'POST',
         url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes',

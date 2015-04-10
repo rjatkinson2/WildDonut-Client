@@ -20,6 +20,7 @@
 
     <!-- your app's js -->
     <script src="app/app.js"></script>
+    <script src="app/navigation/NavigationController.js"></script>
     <script src="app/auth/authenticatorService.js"></script>
     <script src="app/state/stateService.js"></script>
     <script src="app/class-manager/classManagerService.js"></script>
@@ -40,6 +41,21 @@
 
   </head>
   <body ng-app="wildDonut">
+    <ion-nav-bar class="bar-positive" ng-controller="NavigationController">
+      <ion-nav-buttons side="primary">
+        <button class="button" ng-click="browse()">browse</button>
+        <button class="button" ng-click="login()">login</button>
+        <button class="button" ng-click="signup()">signup</button>
+        <button class="button" ng-click="userProfile()">userProfile</button>
+        <button class="button" ng-click="userProfileSettings()">userProfileSettings</button>
+        <button class="button" ng-click="manageTeacherClasses()">manageTeacherClasses</button>
+        <button class="button" ng-click="bookedClasses()">bookedClasses</button>
+        <button class="button" ng-click="createClass()">createClass</button>
+        <button class="button" ng-click="viewClass()">viewClass</button>
+        <button class="button" ng-click="editClass()">editClass</button>
+        <button class="button" ng-click="manageStudentClasses()">manageStudentClasses</button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Ionic Blank Starter</h1>
