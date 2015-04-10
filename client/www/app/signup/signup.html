@@ -1,17 +1,24 @@
-<div>
-  <h1>Sign up</h1>
-  <form>
-
-    <div>
-      <label for="username">Username</label>
-      <input type="text" name="username" ng-model="user.username" required>
+<div class="text-center">
+  <img src="./img/ionic.png">
+</div>
+<div class="row responsive-sm">
+  <div class="col">
+    <div class="list">
+    <label class="item item-input">
+      <input type="text" placeholder="Email Address" name="email" ng-model="user.email">
+    </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Username" name="username" ng-model="user.username">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" name="password" ng-model="user.password">
+      </label>
+      <button class="button button-block button-outline button-positive" ng-click="signup()">
+        Create Account
+      </button>
     </div>
-
-    <div>
-      <label for="password">Password</label>
-      <input type="password" name="password" ng-model="user.password" required>
+    <div class="row">
+      <div class="col col-50"><a ui-sref="login">Login</a></div>
     </div>
-
-    <button type="submit" value="Submit" ng-click="signup()">Sign up</button>
-  </form>
+  </div>
 </div>
