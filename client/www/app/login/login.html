@@ -1,15 +1,28 @@
-<div>
-  <h1>Log in</h1>
-  <form>
-    <div>
-      <label for="username">Username</label>
-      <input class="form-control" type="text" name="username" ng-model="user.username" required>
+<div class="text-center">
+  <img src="./img/ionic.png">
+</div>
+<div class="row responsive-sm">
+  <div class="col">
+    <div class="list">
+      <label class="item item-input">
+      <!-- We need to add email address to user schema and update user.username to user.email -->
+        <input type="text" placeholder="Email Address" name="username" ng-model="user.username">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" name="password" ng-model="user.password">
+      </label>
+      <button class="button button-block button-outline button-positive" ng-click="login()">
+        Login
+      </button>
     </div>
-
-    <div>
-      <label for="password">Password</label>
-      <input class="form-control" type="password" name="password" ng-model="user.password" required>
+    <div class="row">
+      <div class="col col-50"><a ui-sref="signUp">Create Account</a></div>
+      <div class="col col-50">Forgot Password?</div>
     </div>
-    <button type="submit" value="Submit" ng-click="login()">Log in</button>
-  </form>
+    <hr>
+    <div class="row">
+      <div class="col col-50 text-center"><i class="icon ion-social-facebook"></i></div>
+      <div class="col col-50 text-center"><i class="icon ion-social-google"></i></div>
+    </div>
+  </div>
 </div>
