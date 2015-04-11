@@ -7,6 +7,8 @@
   LoginController.$inject = ['$scope', '$location', 'Authenticator'];
 
   function LoginController($scope, $location, Authenticator){
+    // initialize empty user
+    $scope.user = {};
 
     //defers to the Authenticator factory to handle
     //interaction with server and signIn process
