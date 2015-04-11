@@ -97,6 +97,11 @@
           url: '/:username/teacher/classes/:id',
           templateUrl: 'app/teacher/view-class/view-class.html',
           controller: 'ViewClassController'
+        })
+        .state('pay', {
+          url: '/pay',
+          templateUrl: 'app/payment/payment.html',
+          controller: 'PaymentController'
         });
     })
     .run(function($ionicPlatform) {

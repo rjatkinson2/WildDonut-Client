@@ -1,0 +1,29 @@
+<div>
+  <h1>Payments</h1>
+  <form>
+   <span class="payment-errors">{{error}}</span>
+   <div class="row">
+     <label>
+       <span>Card Number</span>
+       <input type="text" ng-model="payment.card" required>
+     </label>
+   </div>
+   <div class="row">
+     <label>
+       <span>Expiration (MM/YYYY)</span>
+       <input type="text" ng-model="payment.month">
+     </label>
+     <input type="text" ng-model="payment.year">
+   </div>
+   <div class="row">
+     <label>
+       <span>CVC</span>
+       <input type="text" ng-model="payment.cvc">
+     </label>
+   </div>
+   <button type="submit" value="Submit" ng-click="charge()">Buy Now</button>
+  </form>
+</div>
+
+
+
