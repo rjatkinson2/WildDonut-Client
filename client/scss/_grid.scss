@@ -1,0 +1,14 @@
+// Grid
+// =================
+
+// rows with no padding
+.row-no-padding {
+  > .col {
+   display: inline;
+  }
+}
+
+// Login page background color
+.login.pane {
+  background-color: $auth-background-color;
+}
