@@ -14,17 +14,47 @@
       // full routing for app
       $stateProvider
         .state('login', {
-          url: '/login',
+          url: '/',
           templateUrl: 'app/login/login.html',
-          controller: 'LoginController'
+          controller: 'LoginController',
+          // To prevent screen jumps when entering and leaving input fields
+          onEnter: function($ionicPlatform){
+            $ionicPlatform.ready(function() {
+              if(window.cordova ){
+                 cordova.plugins.Keyboard.disableScroll(true);
+              }
+           }); 
+          },
+          onExit: function($ionicPlatform){
+            $ionicPlatform.ready(function() {
+               if(window.cordova){
+                 cordova.plugins.Keyboard.disableScroll(false);
+                }
+            });
+          }
         })
         .state('signUp', {
           url: '/signup',
           templateUrl: 'app/signup/signup.html',
-          controller: 'SignupController'
+          controller: 'SignupController',
+          // To prevent screen jumps when entering and leaving input fields
+          onEnter: function($ionicPlatform){
+            $ionicPlatform.ready(function() {
+              if(window.cordova ){
+                 cordova.plugins.Keyboard.disableScroll(true);
+              }
+           }); 
+          },
+          onExit: function($ionicPlatform){
+            $ionicPlatform.ready(function() {
+               if(window.cordova){
+                 cordova.plugins.Keyboard.disableScroll(false);
+                }
+            });
+          }
         })
         .state('browse', {
-          url: '/',
+          url: '/browse',
           templateUrl: 'app/browse/browse.html',
           controller: 'BrowseController'
         })  

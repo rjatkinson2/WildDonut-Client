@@ -1,9 +1,20 @@
 // Override Of Ionic Default
 // ======================
 
+// Links
+a {
+  text-decoration: none;
+}
+
 // List
 // -------
 .list {
   padding-top: 0;
   margin-bottom: 0;
+}
+
+// Buttons
+// -------------
+.button .icon {
+  vertical-align: middle;
 }

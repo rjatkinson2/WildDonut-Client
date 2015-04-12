@@ -1,28 +1,38 @@
-<ion-view hide-nav-bar="true">
-  <ion-content>
-    <div class="text-center">
-      <img src="./img/ionic.png">
-    </div>
-    <div class="row responsive-sm">
+<ion-view class="login" hide-nav-bar="true">
+  <ion-content class="auth-container">
+    <div class="row responsive-md auth-padding">
+      <div class="login-logo text-center">
+        <div class="logo">miyagio</div>
+      </div>
       <div class="col">
         <div class="list">
-        <label class="item item-input">
-          <input type="text" placeholder="Email Address" name="email" ng-model="user.email">
-        </label>
-          <label class="item item-input">
-            <input type="text" placeholder="Username" name="username" ng-model="user.username">
+          <label class="item item-input bare">
+          <!-- We need to add email address to user schema and update user.username to user.email -->
+            <i class="icon white ion-ios-locked-outline"></i>
+            <input type="email" class="text-center" placeholder="EMAIL" name="email" ng-model="user.email">
           </label>
-          <label class="item item-input">
-            <input type="password" placeholder="Password" name="password" ng-model="user.password">
+          <label class="item item-input bare">
+            <i class="icon white ion-ios-person-outline"></i>
+            <input type="text" class="text-center" placeholder="USERNAME" name="username" ng-model="user.username">
           </label>
-          <button class="button button-block button-outline button-positive" ng-click="signup()">
-            Create Account
+          <label class="item item-input bare">
+            <i class="icon white ion-ios-email-outline"></i>
+            <input type="password" class="text-center" placeholder="PASSWORD" name="password" ng-model="user.password">
+          </label>
+          <button name="account" class="button button-light button-outline button-block" ng-click="signup()">
+            CREATE ACCOUNT
           </button>
-        </div>
-        <div class="row">
-          <div class="col col-50"><a ui-sref="login">Login</a></div>
         </div>
       </div>
     </div>
   </ion-content>
+  <div class="bar-footer buttons transparent">
+    <div class="row">
+      <div class="col col.50">
+        <a ui-sref="login">
+          <button class="button button-large button-stable button-block account-button">Login</button>
+        </a>  
+      </div>
+    </div>
+  </div>
 </ion-view>

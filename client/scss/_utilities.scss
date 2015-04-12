@@ -1,0 +1,22 @@
+// Utilities
+// ===================
+
+// Transparent background
+.transparent {
+  background-color: transparent;
+}
+
+// Create a circle object
+.circle {
+  width: 65px;
+  height: 65px;
+  background: $theme-blue;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+// Spacer
+.spacer-lg {
+  margin: 45px 0;
+}
