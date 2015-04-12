@@ -12,7 +12,7 @@
         CollectionManager.getAvailableClasses().then(function(classes) {
           $scope.classes = classes;
         });
-      }
+      };
 
       $scope.init = function() {
         $scope.getAvailableClasses();
