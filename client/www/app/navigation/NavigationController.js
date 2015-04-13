@@ -13,7 +13,7 @@
     };
 
     $scope.login = function(){
-      console.log('hi');
+      console.log('hii');
       $location.path('/login');
     };
 
@@ -51,6 +51,10 @@
 
     $scope.manageStudentClasses = function(){
       $location.path('/' + State.username + '/student/classes/manage');
+    };
+
+    $scope.pay = function(){
+      $location.path('/pay');
     };
   }
 
