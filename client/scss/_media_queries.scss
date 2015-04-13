@@ -1,0 +1,15 @@
+// Meida Queries
+// ===================
+
+// iPhone 5/5S and smaller
+@media only screen and (max-width : 320px) {
+
+  .auth-container {
+    padding-top: 35px;
+  }
+
+  .circle-overlay {
+    left: 10px;
+  }
+
+}

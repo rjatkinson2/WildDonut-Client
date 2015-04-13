@@ -1,0 +1,17 @@
+// Forms
+// ===================
+
+.item.item-input.bare {
+  background-color: transparent;
+  border-top: 1px solid $bare-border-color;
+  border-bottom: 1px solid $bare-border-color;
+  border-left: none;
+  border-right: none;
+}
+
+// Change to email
+input[name=email],
+input[name=username],
+input[name=password] {
+  color: white;
+}

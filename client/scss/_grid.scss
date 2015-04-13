@@ -12,3 +12,59 @@
 .login.pane {
   background-color: $auth-background-color;
 }
+
+// auth page padding
+.auth-padding {
+  padding: 30px;
+}
+
+// Authentication pages container
+.auth-container {
+  padding-top: 55px;
+}
+
+// Login logo container
+.login-logo {
+  margin-bottom: 80px;
+}
+
+// Footer bar with buttons; height 60px
+.bar-footer.buttons {
+  position: absolute;
+  bottom: 32px;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+
+  // remove row and col padding to extend buttons
+  .row {
+   padding-left: 0;
+   padding-right: 0; 
+  }
+
+  .col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  button {
+    border-radius: 0;
+  }
+}
+
+// Social button container
+.button.social-login-button {
+  position: relative;
+  padding-left: 95px;
+  color: $theme-blue;
+  font-weight: bold;
+}
+
+.circle-overlay {
+  position: absolute;
+  top: -8px;
+  left: 40px;
+  font-size: 40px;
+}
+
+
