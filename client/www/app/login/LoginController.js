@@ -4,7 +4,7 @@
     .module('wildDonut')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['$scope', '$location', 'Authenticator'];
+  LoginController.$inject = ['$scope', '$location', 'Authenticator', 'Facebook'];
 
   function LoginController($scope, $location, Authenticator){
     // initialize empty user
@@ -18,6 +18,13 @@
         $location.path('/');
       }).catch(function(error){
         console.log(error);
+      });
+    };
+
+    $scope.facebookLogin = function(){
+      Authenticator.facebookLogin(function(response){
+        $location.path('/');
+        console.log(response);
       });
     };
   }
