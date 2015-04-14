@@ -2,7 +2,7 @@
 <form>
   <div class="list">
     <label class="item item-input">
-      <input type="text" placeholder="{{profile.first_name}}" ng-model="profile.first_name">
+      <input type="text" placeholder="{{profile.first_name || 'First Name'}}" ng-model="profile.first_name">
     </label>
     <label class="item item-input">
       <input type="text" placeholder="Last Name" ng-model="profile.last_name">

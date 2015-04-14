@@ -12,7 +12,7 @@
         CollectionManager.getAvailableClasses().then(function(classes) {
           $scope.classes = classes;
         });
-      }
+      };
 
       $scope.viewClass = function(classInformation) {
         $location.path('/' + classInformation.teacher.username + '/teacher/classes/' + classInformation._id);
