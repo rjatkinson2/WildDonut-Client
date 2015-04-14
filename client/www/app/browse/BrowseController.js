@@ -19,6 +19,9 @@
       };
 
       $scope.viewClass = function(classInstance) {
+        State.rate = classInstance.rate;
+        State.class_name = classInstance.name;
+        State.class_id = classInstance._id;
         $location.path('/' + classInstance.teacher.username + '/teacher/classes/' + classInstance._id);
       };
 

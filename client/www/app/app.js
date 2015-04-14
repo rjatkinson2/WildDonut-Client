@@ -110,6 +110,12 @@
           url: '/:username/teacher/classes/:id/review',
           templateUrl: 'app/review/review.html',
           controller: 'ReviewController'
+        })
+        .state('transfer', {
+          url: '/transfer',
+          templateUrl: 'app/transfer/transfer.html',
+          controller: 'TransferController'
+
         });
     })
     .run(['$ionicPlatform','$rootScope', 'State', '$location', function($ionicPlatform, $rootScope, State, $location) {
