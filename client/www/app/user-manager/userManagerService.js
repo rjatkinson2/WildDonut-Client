@@ -20,6 +20,7 @@
         return $http({
           method: 'POST',
           url: 'http://localhost:4568/api/users/' + State.username,
+          withCredentials: true,
           headers: {
             'Content-Type': 'application/json'
           },
@@ -33,6 +34,7 @@
         return $http({
           method: 'GET',
           url: 'http://localhost:4568/api/users/' + State.username,
+          withCredentials: true,
           headers: {
             'Content-Type': 'application/json'
           }

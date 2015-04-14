@@ -28,6 +28,7 @@
         method: 'POST',
         url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes',
         data: classInformation,
+        withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -41,6 +42,7 @@
         method: 'POST',
         url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/' + classId,
         data: classInformation,
+        withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -53,6 +55,7 @@
       return $http({
         method: 'DELETE',
         url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/' + classId,
+        withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -65,6 +68,7 @@
       return $http({
         method: 'GET',
         url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes',
+        withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -77,6 +81,7 @@
       return $http({
         method: 'GET',
         url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/booked',
+        withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -89,6 +94,7 @@
       return $http({
         method: 'GET',
         url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/available',
+        withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -101,6 +107,7 @@
       return $http({
         method: 'GET',
         url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/' + classId,
+        withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -113,6 +120,7 @@
       return $http({
         method: 'GET',
         url: 'http://localhost:4568/api/users/' + State.username + '/student/classes/booked',
+        withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -125,6 +133,7 @@
       return $http({
         method: 'POST',
         url: 'http://localhost:4568/api/users/' + State.username + '/student/classes/booked',
+        withCredentials: true,
         data: bookingDetails,
         headers: {
           'Content-Type': 'application/json'

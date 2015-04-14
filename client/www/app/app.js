@@ -6,8 +6,10 @@
 (function() {
 
   angular
-    .module('wildDonut', ['ionic', 'ui.router'])
-    .config(function($stateProvider, $urlRouterProvider) {
+    .module('wildDonut', ['ionic', 'ui.router', 'facebook'])
+    .config(function($stateProvider, $urlRouterProvider, FacebookProvider) {
+
+      FacebookProvider.init('489613531189387');
       // for any unmatched urls, redirect to /home
       $urlRouterProvider.otherwise('/');
 
@@ -23,7 +25,7 @@
               if(window.cordova ){
                  cordova.plugins.Keyboard.disableScroll(true);
               }
-           }); 
+           });
           },
           onExit: function($ionicPlatform){
             $ionicPlatform.ready(function() {
@@ -43,7 +45,7 @@
               if(window.cordova ){
                  cordova.plugins.Keyboard.disableScroll(true);
               }
-           }); 
+           });
           },
           onExit: function($ionicPlatform){
             $ionicPlatform.ready(function() {
@@ -57,7 +59,7 @@
           url: '/browse',
           templateUrl: 'app/browse/browse.html',
           controller: 'BrowseController'
-        })  
+        })
         .state('profileView', {
           url: '/:username/profile',
           templateUrl: 'app/profile/profile-view/profile-view.html',
@@ -116,5 +118,5 @@
         }
       });
   });
-    
+
 })();
