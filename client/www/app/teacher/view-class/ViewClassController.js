@@ -4,9 +4,9 @@
     .module('wildDonut')
     .controller('ViewClassController', ViewClassController);
 
-  ViewClassController.$inject = ['$scope', '$stateParams', 'ClassManager', 'State'];
+  ViewClassController.$inject = ['$scope', '$stateParams', '$location', 'ClassManager', 'State'];
 
-  function ViewClassController($scope, $stateParams, ClassManager, State){
+  function ViewClassController($scope, $stateParams, $location, ClassManager, State){
     $scope.class_id = $stateParams.id;
 
     $scope.getClass = function(){

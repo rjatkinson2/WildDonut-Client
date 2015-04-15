@@ -12,7 +12,7 @@
         ClassManager.getBookedStudentClasses().then(function(classes) {
           $scope.classes = classes;
         });
-      }
+      };
 
       $scope.init = function() {
         $scope.getBookedStudentClasses();
