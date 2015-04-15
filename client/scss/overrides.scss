@@ -58,6 +58,10 @@ h6 {
   clear:both
 }
 
+.item h6{
+  @extend h6;
+}
+
 // List
 // -------
 .list {

@@ -7,7 +7,7 @@
       </label>
     </div>
     <div class="list" ng-repeat="class in classes">
-      <a class="item" href="#" ng-click="viewClass(class)">
+      <a class="item" ng-click="viewClass(class)">
         <div class="row banner">
         </div>
         <div class="row triangle">
@@ -25,7 +25,7 @@
               <h4>{{ class.name }}</h4>
             </div>
             <div class="row">
-              <h6>{{ class.date }} @ {{ class.start_time }}</h6>
+              <h6>{{ class.date | date:"MM-dd-yy '@' h:mma"}}</h6>
             </div>
           </div>
           <div class="col col-top rate">
