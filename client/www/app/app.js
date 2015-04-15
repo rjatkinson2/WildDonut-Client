@@ -6,7 +6,7 @@
 (function() {
 
   angular
-    .module('wildDonut', ['ionic', 'ui.router', 'facebook'])
+    .module('wildDonut', ['ionic', 'ui.router', 'facebook', 'ionic.rating'])
     .config(function($stateProvider, $urlRouterProvider, FacebookProvider) {
 
       FacebookProvider.init('489613531189387');
@@ -16,7 +16,7 @@
       // full routing for app
       $stateProvider
         .state('login', {
-          url: '/login',
+          url: '/',
           templateUrl: 'app/login/login.html',
           controller: 'LoginController',
           // To prevent screen jumps when entering and leaving input fields
@@ -56,7 +56,7 @@
           }
         })
         .state('browse', {
-          url: '/',
+          url: '/browse',
           templateUrl: 'app/browse/browse.html',
           controller: 'BrowseController'
         })
@@ -70,10 +70,10 @@
           templateUrl: 'app/profile/profile-settings/profile-settings.html',
           controller: 'ProfileSettingsController'
         })
-        .state('studentManageClasses', {
-          url: '/:username/student/classes/manage',
-          templateUrl: 'app/student/student-manage-classes/student-manage-classes.html',
-          controller: 'StudentManageClassesController'
+        .state('studentManageSchedule', {
+          url: '/:username/student/schedule/manage',
+          templateUrl: 'app/student/student-manage-schedule/student-manage-schedule.html',
+          controller: 'StudentManageScheduleController'
         })
         .state('teacherManageClasses', {
           url: '/:username/teacher/classes/manage',
@@ -104,6 +104,11 @@
           url: '/pay',
           templateUrl: 'app/payment/payment.html',
           controller: 'PaymentController'
+        })
+        .state('review', {
+          url: '/:username/teacher/classes/:id/review',
+          templateUrl: 'app/review/review.html',
+          controller: 'ReviewController'
         });
     })
     .run(function($ionicPlatform) {

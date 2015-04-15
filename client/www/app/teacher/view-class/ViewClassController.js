@@ -8,6 +8,7 @@
 
   function ViewClassController($scope, $stateParams, $location, ClassManager, State){
     $scope.class_id = $stateParams.id;
+    console.log($location.path());
 
     $scope.getClass = function(){
       ClassManager.getClass($scope.class_id).then(function(classInfo){
@@ -21,6 +22,7 @@
 
       ClassManager.bookClass($scope.classInformation).then(function(response){
         console.log(response);
+        $location.path('/' + $scope.classInformation.student_id + '/student/schedule/manage');
       });
     };
 

@@ -17,7 +17,8 @@
       getAvailableTeacherClasses: getAvailableTeacherClasses,
       getClass: getClass,
       getBookedStudentClasses: getBookedStudentClasses,
-      bookClass: bookClass
+      bookClass: bookClass,
+      submitReview: submitReview
     };
 
     return instance;
@@ -135,6 +136,20 @@
         url: 'http://localhost:4568/api/users/' + State.username + '/student/classes/booked',
         withCredentials: true,
         data: bookingDetails,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function(response){
+        return response;
+      });
+    }
+
+    function submitReview(review){
+      return $http({
+        method: 'POST',
+        url: 'http://localhost:4568/api/user/'+ review.teacher +'/teacher/classes/'+ review.class_id +'/reviews',
+        withCredentials: true,
+        data: review,
         headers: {
           'Content-Type': 'application/json'
         }

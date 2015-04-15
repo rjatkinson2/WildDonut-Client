@@ -1,0 +1,24 @@
+// Images
+// =================
+div.rating { text-align: center; }
+div.rating ul.rating { list-style: none; }
+div.rating ul.rating li { display: inline; }
+
+
+ul.rating li{
+  display: inline-block;
+  font-size:2.6em;
+  color: $theme-light-blue;
+}
+
+ul.rating li .icon{
+  color: $theme-light-blue;
+}
+
+textarea.review.message{
+  height: 200px;
+  padding-top: 2.0em;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  color: #4A4A4A
+}

@@ -1,12 +1,18 @@
-<div>
-  <form>
-    name: {{classInformation.name}}
-    description: {{classInformation.description}}
-    rate ($): {{classInformation.rate}}
-    date: {{classInformation.date}}
-    start: {{classInformation.start_time}}
-    end: {{classInformation.end_time}}
-    location: {{classInformation.location}}
-    <button type="submit" value="Submit" ng-click="bookClass()">Book Class</button>
-  </form>
-</div>
+<ion-view class="has-header" view-title="Class Details">
+  <ion-content>
+    <div class="row">
+      <div class="col col-67">
+        <h4>{{classInformation.name}}</h4>
+        <div>description: {{classInformation.description}}</div>
+        <div>rate ($): {{classInformation.rate}}</div>
+        <div>date: {{classInformation.date}}</div>
+        <div>start: {{classInformation.start_time}}</div>
+        <div>end: {{classInformation.end_time}}</div>
+        <div>location: {{classInformation.location}}</div>
+      </div>
+      <div class="col col-center">
+        <button class="button button-positive" ng-click="bookClass()">Book Class</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
