@@ -8,10 +8,6 @@
 
   function NavigationController($scope, $location, State){
 
-    $scope.browse = function(){
-      $location.path('/browse');
-    };
-
     $scope.login = function(){
       console.log('hii');
       $location.path('/login');
@@ -21,19 +17,27 @@
       $location.path('/signup');
     };
 
-    $scope.userProfile = function(){
+    $scope.browse = function(){
+      $location.path('/browse');
+    };
+
+    $scope.profile = function(){
       $location.path('/'+ State.username +'/profile');
     };
 
-    $scope.userProfileSettings = function(){
+    $scope.profileSettings = function(){
       $location.path('/'+ State.username +'/profile/settings');
     };
 
-    $scope.manageTeacherClasses = function(){
+    $scope.studentSchedule = function(){
+      $location.path('/' + State.username + '/student/classes/manage');
+    };
+
+    $scope.manageClasses = function(){
       $location.path('/'+ State.username +'/teacher/classes/manage');
     };
 
-    $scope.bookedClasses = function(){
+    $scope.teacherSchedule = function(){
       $location.path('/' + State.username + '/teacher/classes/booked');
     };
 
@@ -41,20 +45,20 @@
       $location.path('/' + State.username + '/teacher/classes/new');
     };
 
-    $scope.viewClass = function(classID){
-      $location.path('/' + State.username + '/teacher/classes/' + classID);
-    };
-
     $scope.editClass = function(classID){
       $location.path('/' + State.username + '/teacher/classes/' + classID + '/edit');
     };
 
-    $scope.manageStudentClasses = function(){
-      $location.path('/' + State.username + '/student/classes/manage');
+    $scope.viewClass = function(classID){
+      $location.path('/' + State.username + '/teacher/classes/' + classID);
     };
 
     $scope.pay = function(){
       $location.path('/pay');
+    };
+
+    $scope.review = function(){
+      $location.path('/review');
     };
   }
 
