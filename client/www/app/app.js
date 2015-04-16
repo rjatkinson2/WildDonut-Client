@@ -10,13 +10,14 @@
     .config(function($stateProvider, $urlRouterProvider, FacebookProvider) {
 
       FacebookProvider.init('489613531189387');
+
       // for any unmatched urls, redirect to /home
       $urlRouterProvider.otherwise('/');
 
       // full routing for app
       $stateProvider
         .state('login', {
-          url: '/',
+          url: '/login',
           templateUrl: 'app/login/login.html',
           controller: 'LoginController',
           // To prevent screen jumps when entering and leaving input fields
@@ -56,11 +57,11 @@
           }
         })
         .state('browse', {
-          url: '/browse',
+          url: '/',
           templateUrl: 'app/browse/browse.html',
           controller: 'BrowseController'
         })
-        .state('profileView', {
+        .state('profile', {
           url: '/:username/profile',
           templateUrl: 'app/profile/profile-view/profile-view.html',
           controller: 'ProfileViewController'
@@ -70,27 +71,27 @@
           templateUrl: 'app/profile/profile-settings/profile-settings.html',
           controller: 'ProfileSettingsController'
         })
-        .state('studentManageSchedule', {
+        .state('studentSchedule', {
           url: '/:username/student/schedule/manage',
           templateUrl: 'app/student/student-manage-schedule/student-manage-schedule.html',
           controller: 'StudentManageScheduleController'
         })
-        .state('teacherManageClasses', {
+        .state('manageClasses', {
           url: '/:username/teacher/classes/manage',
           templateUrl: 'app/teacher/teacher-manage-classes/teacher-manage-classes.html',
           controller: 'TeacherManageClassesController'
         })
-        .state('teacherBookedClasses', {
+        .state('teacherSchedule', {
           url: '/:username/teacher/classes/booked',
           templateUrl: 'app/teacher/teacher-booked-classes/teacher-booked-classes.html',
           controller: 'TeacherBookedClassesController'
         })
-        .state('teacherCreateClass', {
+        .state('createClass', {
           url: '/:username/teacher/classes/new',
           templateUrl: 'app/teacher/teacher-create-class/teacher-create-class.html',
           controller: 'TeacherCreateClassController'
         })
-        .state('teacherEditClass', {
+        .state('editClass', {
           url: '/:username/teacher/classes/:id/edit',
           templateUrl: 'app/teacher/teacher-edit-class/teacher-edit-class.html',
           controller: 'TeacherEditClassController'
