@@ -4,9 +4,9 @@
     .module('wildDonut')
     .controller('NavigationController', NavigationController);
 
-  NavigationController.$inject = ['$scope', '$location', 'State'];
+  NavigationController.$inject = ['$scope', '$location', 'State', 'Authenticator'];
 
-  function NavigationController($scope, $location, State){
+  function NavigationController($scope, $location, State, Authenticator){
 
     $scope.login = function(){
       console.log('hii');
@@ -59,6 +59,12 @@
 
     $scope.review = function(){
       $location.path('/review');
+    };
+
+    $scope.logout = function(){
+      Authenticator.logout().then(function(response){
+        $location.path('/login');
+      });
     };
   }
 
