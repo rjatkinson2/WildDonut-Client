@@ -11,7 +11,8 @@
     var instance = {
       login: login,
       signup: signup,
-      facebookLogin: facebookLogin
+      facebookLogin: facebookLogin,
+      logout: logout
     };
 
     return instance;
@@ -74,6 +75,21 @@
         })
       });
     }
+
+    function logout(){
+      return $http({
+        method: 'POST',
+        url: 'http://localhost:4568/api/users/logout/',
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }).then(function(response){
+        State = {};
+        return response;
+      });
+    }
+
   }
 
 })();
