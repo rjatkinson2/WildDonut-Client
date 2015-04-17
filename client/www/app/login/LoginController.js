@@ -15,7 +15,7 @@
     $scope.login = function(){
       Authenticator.login($scope.user).then(function(response){
         //redirects you to home page if successful login
-        $location.path('/browse');
+        $location.path('/');
       }).catch(function(error){
         console.log(error);
       });
@@ -23,7 +23,7 @@
 
     $scope.facebookLogin = function(){
       Authenticator.facebookLogin(function(response){
-        $location.path('/browse');
+        $location.path('/');
         console.log(response);
       });
     };
