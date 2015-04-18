@@ -9,6 +9,18 @@
         <div>start: {{classInformation.start_time}}</div>
         <div>end: {{classInformation.end_time}}</div>
         <div>location: {{classInformation.location}}</div>
+        <div class="row triangle rating">
+          <p>
+            <i class="ion-star" ng-repeat="i in getStarsLength(classInformation.stars.full) track by $index"></i>
+          </p>
+          <p class="adjust">
+            <i class="ion-ios-star-half" ng-repeat="j in getStarsLength(classInformation.stars.half) track by $index"></i>
+          </p>
+          <p class="adjust">
+            <i class="ion-ios-star-outline" ng-repeat="k in getStarsLength(classInformation.stars.empty) track by $index"></i>
+          </p>
+          <h6 style="margin: 8px 0 0 5px">{{ classInformation.reviews.length || 0 }}</h6>
+        </div>
       </div>
       <div class="col col-center">
         <button class="button button-positive" ng-click="bookClass()">Book Class</button>

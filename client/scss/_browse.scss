@@ -44,16 +44,17 @@
   display: inline;
 }
 
-.ion-star{
-  color: $theme-orange;
-}
-
 .row.triangle{
   padding: 0;
 }
 
 .row.triangle p{
   margin:5px 0 0 10px;
+  display: inline;
+}
+
+.row.triangle h6{
+  margin: 4px 0 0 5px;
 }
 
 .triangle{

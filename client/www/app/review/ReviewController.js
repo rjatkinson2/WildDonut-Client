@@ -3,17 +3,21 @@
     .module('wildDonut')
     .controller('ReviewController', ReviewController);
 
-  ReviewController.$inject = ['$scope', '$location', '$stateParams', 'ClassManager'];
+  ReviewController.$inject = ['$scope', '$location', '$stateParams', 'State', 'ClassManager'];
 
-  function ReviewController($scope, $location, $stateParams, ClassManager){
+  function ReviewController($scope, $location, $stateParams, State, ClassManager){
+    console.log(State.username);
     $scope.classInfo = {};
 
     $scope.review = {};
+    $scope.review.review = null;
+    //ultimately below should be just student's name, but State needs updated to carry both username and name
+    $scope.review.student_name = State.username; 
+    $scope.review.teacher_username = $stateParams.username;
     $scope.review.class_id = $stateParams.id;
-    $scope.review.teacher = $stateParams.username;
-    $scope.review.message = null;
 
     $scope.submitReview = function(){
+      $scope.review.date = Date.now();
       console.log('pre-submit');
       console.log($scope.review);
       ClassManager.submitReview($scope.review).then(function(response){
@@ -23,7 +27,7 @@
     };
 
     $scope.init = function(){
-      $scope.review.rate = 3;
+      $scope.review.rating = 3;
       $scope.review.max = 5;
       
       ClassManager.getClass($scope.review.class_id).then(function(classInfo){
