@@ -6,12 +6,19 @@
   color: white;
 }
 
+@font-face {
+  font-family:"Fontastique";
+  src:url("Fontastique.ttf") format("truetype");
+  font-weight:normal;
+  font-style:normal;
+}
+
 // Fonts
 .logo {
-  font-family: 'Overlock', cursive;
+  font-family: "Fontastique";
   font-weight: 900;
   color: white;
-  font-size: 46px;
+  font-size: 64px;
 }
 
 // Alignment
