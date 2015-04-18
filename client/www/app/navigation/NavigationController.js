@@ -30,7 +30,7 @@
     };
 
     $scope.studentSchedule = function(){
-      $location.path('/' + State.username + '/student/classes/manage');
+      $location.path('/' + State.username + '/student/schedule/manage');
     };
 
     $scope.manageClasses = function(){
