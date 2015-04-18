@@ -6,7 +6,7 @@
 (function() {
 
   angular
-    .module('wildDonut', ['ionic', 'ui.router', 'facebook', 'ionic.rating'])
+    .module('wildDonut', ['ionic', 'ui.router', 'facebook', 'ionic.rating', 'ngCookies'])
     .config(function($stateProvider, $urlRouterProvider, FacebookProvider) {
 
       FacebookProvider.init('489613531189387');
@@ -112,8 +112,16 @@
           controller: 'ReviewController'
         });
     })
-    .run(function($ionicPlatform) {
+    .run(['$ionicPlatform','$rootScope', 'State', '$location', function($ionicPlatform, $rootScope, State, $location) {
+
       $ionicPlatform.ready(function() {
+
+        $rootScope.$on('$stateChangeStart', function(event){
+          if (!State.username && (['/login', '/signup', '/'].indexOf($location.path()) === -1)){
+            $location.path('/login');
+            return false;
+          }
+        });
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
         if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -123,6 +131,6 @@
           StatusBar.styleDefault();
         }
       });
-  });
+    }]);
 
 })();
