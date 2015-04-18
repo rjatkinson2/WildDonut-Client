@@ -4,16 +4,27 @@
       <div class="col col-67">
         <h4>{{ class.name }}</h4>
         <div>{{ class.description }}</div>
-        <div>{{ class.date }}</div>
-        <div>{{ class.time }}</div>
+        <div>{{ class.date | date:"MM-dd-yy '@' h:mma" }}</div>
         <div>{{ class.teacher_name }}</div>
-        <div>end_time: {{ class.end_time }}</div>
+        <div>end_time: {{ class.end_time | date:"MM-dd-yy '@' h:mma" }}</div>
         <div>truelocation: {{ class.truelocation }}</div>
         <div>rate: {{ class.rate }}</div>
-        <div>start_time: {{ class.start_time }}</div>
+        <div>start_time: {{ class.start_time | date:"MM-dd-yy '@' h:mma" }}</div>
+        <div class="row triangle rating">
+          <p>
+            <i class="ion-star" ng-repeat="i in getStarsLength(class.stars.full) track by $index"></i>
+          </p>
+          <p class="adjust">
+            <i class="ion-ios-star-half" ng-repeat="j in getStarsLength(class.stars.half) track by $index"></i>
+          </p>
+          <p class="adjust">
+            <i class="ion-ios-star-outline" ng-repeat="k in getStarsLength(class.stars.empty) track by $index"></i>
+          </p>
+          <h6 style="margin: 8px 0 0 5px">{{ class.reviews.length || 0 }}</h6>
+        </div>
       </div>
       <div class="col col-center">
-        <button class="button button-positive" ng-click="review(class)">Review</button>
+        <button class="button button-positive" ng-click="review(class)" ng-show="class.reviewable">Review</button>
       </div>
     </div>
   </ion-content>

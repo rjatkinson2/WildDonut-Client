@@ -10,14 +10,18 @@
       <a class="item" ng-click="viewClass(class)">
         <div class="row banner">
         </div>
-        <div class="row triangle">
+        <div class="row triangle rating">
           <div class="prof-circle"></div>
           <p>
-            <i class="ion-star"></i>
-            <i class="ion-star"></i>
-            <i class="ion-star"></i>
-            <i class="ion-star"></i>
+            <i class="ion-star" ng-repeat="i in getStarsLength(class.stars.full) track by $index"></i>
           </p>
+          <p class="adjust">
+            <i class="ion-ios-star-half" ng-repeat="j in getStarsLength(class.stars.half) track by $index"></i>
+          </p>
+          <p class="adjust">
+            <i class="ion-ios-star-outline" ng-repeat="k in getStarsLength(class.stars.empty) track by $index"></i>
+          </p>
+          <h6 style="margin: 8px 0 0 5px">{{ class.reviews.length || 0 }}</h6>
         </div>
         <div class="row describe">
           <div class="col col-75">

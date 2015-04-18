@@ -14,7 +14,7 @@
         UserManager.getProfileData().then(function(profile) {
           $scope.profile = profile.data;
         });
-      }
+      };
 
       $scope.init = function() {
         $scope.getProfileData();

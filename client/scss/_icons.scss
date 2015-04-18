@@ -13,6 +13,13 @@
   color: $theme-green;
 }
 
+i.ion-star, i.ion-ios-star-half, i.ion-ios-star-outline{
+  color: $theme-orange;
+}
+
+.row.triangle.rating p.adjust{
+  margin-left:-1px;
+}
 .item-icon-left .icon {
   font-size: 24px;
 }
