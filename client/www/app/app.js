@@ -7,7 +7,9 @@
 
   angular
     .module('wildDonut', ['ionic', 'ui.router', 'facebook', 'ionic.rating', 'ngCookies'])
-    .config(function($stateProvider, $urlRouterProvider, FacebookProvider) {
+    .config(function($stateProvider, $urlRouterProvider, FacebookProvider, $ionicConfigProvider) {
+
+      $ionicConfigProvider.backButton.previousTitleText(false).text('  ');
 
       FacebookProvider.init('489613531189387');
 

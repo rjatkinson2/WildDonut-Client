@@ -1,29 +1,54 @@
-<ion-view class="has-header" view-title="Class Details">
+<ion-view class="has-header" view-title="Mike Donahue">
   <ion-content>
-    <div class="row">
-      <div class="col col-67">
-        <h4>{{classInformation.name}}</h4>
-        <div>description: {{classInformation.description}}</div>
-        <div>rate ($): {{classInformation.rate}}</div>
-        <div>date: {{classInformation.date}}</div>
-        <div>start: {{classInformation.start_time}}</div>
-        <div>end: {{classInformation.end_time}}</div>
-        <div>location: {{classInformation.location}}</div>
-        <div class="row triangle rating">
-          <p>
-            <i class="ion-star" ng-repeat="i in getStarsLength(classInformation.stars.full) track by $index"></i>
-          </p>
-          <p class="adjust">
-            <i class="ion-ios-star-half" ng-repeat="j in getStarsLength(classInformation.stars.half) track by $index"></i>
-          </p>
-          <p class="adjust">
-            <i class="ion-ios-star-outline" ng-repeat="k in getStarsLength(classInformation.stars.empty) track by $index"></i>
-          </p>
-          <h6 style="margin: 8px 0 0 5px">{{ classInformation.reviews.length || 0 }}</h6>
+    <div class="profile-img-background">
+      <div class="menu-profile-image text-center">
+        <div class="profile-image"></div>
+        <div class="row">
+          <div class="col col-30">
+            <div class="teacher-rating">{{ teacher.classes.length || "0" }}</div>
+            <div class="teacher-classes">Classes</div>
+          </div>  
+          <div class="col col-30">
+            <div class="teacher-rating">{{ teacher.avg_rating || "0" }}</div>
+            <div class="teacher-classes">Rating</div>
+          </div>
+          <div class="col col-30">
+            <div class="teacher-rating">{{ teacher.total_ratings || "0" }}</div>
+            <div class="teacher-classes">Reviews</div>
+          </div>
         </div>
       </div>
-      <div class="col col-center">
-        <button class="button button-positive" ng-click="bookAndPay()">Book Class</button>
+    </div>
+    <div class="col profile-container">
+    <h4 class="profile-skills-title">SKILLS</h4>
+    <div class="list" ng-repeat="skill in teacher.skills">
+      <div class="item item-profile">
+        <div class="row describe">
+          <div class="col col-30">
+            <button class="button button-green">{{ skill }}</button>
+          </div>  
+        </div>
+      </div>
+    </div>
+    <h4 class="profile-classes-title">CLASSES</h4>
+      <div class="list" ng-repeat="class in classes">
+        <div class="item item-profile">
+          <div class="row describe">
+            <div class="col col-75">
+              <div class="row">
+                <h4>{{ class.name }}</h4>
+              </div>
+              <div class="row triangle rating">
+                <h6>{{ class.date | date:"MM-dd-yy '@' h:mma"}}</h6>
+                <div review-directive></div>
+                <h6>{{ class.reviews.length || 0 }}</h6>
+              </div>
+            </div>
+            <div class="col col-top rate rate-profile">
+              <div ng-click="bookAndPay(class._id)"><h5>${{ class.rate }}</h5></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </ion-content>

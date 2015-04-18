@@ -1,0 +1,65 @@
+.profile-img-background {
+  /*ultimately overwrite this background-image with angular*/
+  background-image: url(../img/blurr.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: auto;
+  min-width: 100%;
+  height: 250px;
+  padding-top: 25px;
+  // margin-top: -45px;
+}
+
+.teacher-classes {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 200px;
+}
+
+.teacher-rating {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-weight: 200;
+  font-size: 2.3rem;
+  padding-bottom: 10px;
+}
+
+.button-green {
+  background-color: $theme-green;
+  color: white;
+  padding: 0px 14px;
+  line-height: 2px;
+  min-height: 33px;
+  margin: 11px 0px;
+  min-width: 100px;
+  max-width: 100px;
+  border: none;
+}
+
+.profile-skills-title {
+  color: $theme-green;
+  font-size: 14px;
+  margin-top: 13px !important;
+}
+
+.profile-classes-title {
+  font-size: 14px;
+  margin-top: 16px !important;
+}
+
+.profile-container {
+  margin: 0px 11px;
+  width: 95%;
+}
+.item-profile {
+  border-right: none;
+  border-left: none;
+  padding: 2px 0px;
+}
+
+.rate-profile {
+  margin-top: 14px;
+}
+

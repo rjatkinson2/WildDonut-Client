@@ -11,6 +11,7 @@
       $scope.isTeacher = State.isTeacher;
 
       $scope.getProfileData = function() {
+        //need to pass in a username
         UserManager.getProfileData().then(function(profile) {
           $scope.profile = profile.data;
         });

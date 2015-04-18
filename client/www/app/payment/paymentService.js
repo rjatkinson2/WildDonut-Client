@@ -15,6 +15,7 @@
 
     return instance;
     
+
     function generateTransaction(payment, withdrawOrCharge) {
       Stripe.card.createToken({
         number: payment.card,

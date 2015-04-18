@@ -91,10 +91,10 @@
       });
     }
 
-    function getAvailableTeacherClasses(){
+    function getAvailableTeacherClasses(username){
       return $http({
         method: 'GET',
-        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/available',
+        url: 'http://localhost:4568/api/users/' + username + '/teacher/classes/available',
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
