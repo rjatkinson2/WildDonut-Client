@@ -6,7 +6,7 @@
   <title></title>
 
   <!-- fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Overlock:900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
   <!-- compiled css output -->
   <link href="css/ionic.app.css" rel="stylesheet">
@@ -67,27 +67,37 @@
           <ion-header-bar class="bar-positive">
           </ion-header-bar>
           <ion-content>
+            <div class="menu-profile-image text-center">
+              <div class="profile-image"></div>
+              <p class="name">Mike Donahue</p>  
+            </div>
             <ion-list>
-              <a ng-click="browse()">
-                <ion-item nav-clear menu-close>
-                  Browse Classes
-                </ion-item>
-              </a>
-              <a ng-click="studentSchedule()">
-                <ion-item nav-clear menu-close>
-                  My Schedule
-                </ion-item>
-              </a>
-              <a ng-click="profile()">
-                <ion-item nav-clear menu-close>
-                  Profile
-                </ion-item>
-              </a>
-              <a ng-click="logout()">
-                <ion-item nav-clear menu-close>
-                  Logout
-                </ion-item>
-              </a>
+              <div class="menu-list">
+                <a class="item-icon-left" ng-click="browse()">
+                  <ion-item nav-clear menu-close class="item-nav">
+                    <i class="icon ion-ios-list-outline"></i>
+                    Browse Classes
+                  </ion-item>
+                </a>
+                <a class="item-icon-left" ng-click="studentSchedule()">
+                  <ion-item nav-clear menu-close class="item-nav">
+                    <i class="icon ion-calendar"></i>
+                    My Schedule
+                  </ion-item>
+                </a>
+                <a class="item-icon-left" ng-click="profile()">
+                  <ion-item nav-clear menu-close class="item-nav">
+                    <i class="icon ion-person"></i>
+                    Profile
+                  </ion-item>
+                </a>
+                <a class="item-icon-left" ng-click="logout()">
+                  <ion-item nav-clear menu-close class="item-nav">
+                    <i class="icon ion-arrow-left-a"></i>
+                    Logout
+                  </ion-item>
+                </a>
+              </div>
             </ion-list>
           </ion-content>
         </ion-side-menu>
