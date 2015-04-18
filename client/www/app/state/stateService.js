@@ -10,7 +10,7 @@
 
     var instance = {};
 
-    initializeState().then(function(){});
+    initializeState()
 
     return instance;
 
