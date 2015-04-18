@@ -117,7 +117,7 @@
       $ionicPlatform.ready(function() {
 
         $rootScope.$on('$stateChangeStart', function(event){
-          if (!State.username && (['/login', '/signup', '/'].indexOf($location.path()) === -1)){
+          if (!State.username && (['/login', '/signup'].indexOf($location.path()) === -1)){
             $location.path('/login');
             return false;
           }
