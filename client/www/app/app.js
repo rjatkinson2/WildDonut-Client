@@ -102,7 +102,7 @@
           controller: 'ViewClassController'
         })
         .state('pay', {
-          url: '/pay',
+          url: '/:username/teacher/classes/:id/pay',
           templateUrl: 'app/payment/payment.html',
           controller: 'PaymentController'
         })
@@ -113,8 +113,8 @@
         })
         .state('transfer', {
           url: '/transfer',
-          templateUrl: 'app/transfer/transfer.html',
-          controller: 'TransferController'
+          templateUrl: 'app/payment/transfer.html',
+          controller: 'PaymentController'
 
         });
     })

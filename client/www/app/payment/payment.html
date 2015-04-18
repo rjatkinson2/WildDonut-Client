@@ -1,20 +1,26 @@
-<ion-view class="login" hide-nav-bar="true">
+<ion-view class="has-header login nav-page hide-back-button='true'" view-title="Checkout">
+<!-- <ion-view class="login" hide-nav-bar="true"> -->
   <ion-content class="auth-container">
     <div class="row responsive-md auth-padding">
-      <div class="login-logo text-center">
-        <div class="logo">Checkout</div>
+      <!-- <div class="payment-logo text-center">
+        <div class="payment-logo logo">Checkout</div>
+      </div> -->
+      <div class="list card">
+        <div class="item item-image">
+          <img src="http://www.bbc.co.uk/staticarchive/4c4874ee3e26f206588456becfe0f2d6117fdac1.jpg">
+        </div>
+        <div class="item item-avatar">
+          <img src="../img/sd.png">
+          <div class="order-footer col col">
+            <div class="row">
+              <div class="col">{{ classname }} </div>
+              <div class="col order-item">${{ rate }}.00</div>
+            </div>
+          </div>
+        </div>
       </div>
-      
-        <label class="item item-input bare">
-          <i class="icon white ion-ios-pricetags-outline"></i>
-            {{classname}}
-            <span class="item-note">
-              ${{rate}}
-            </span>
-        </label>
       <br>
       <div class="col">
-        <!-- <span class="payment-errors">{{error}}</span> -->
         <div class="list">
           <label class="item item-input bare">
             <i class="icon white ion-ios-world-outline"></i>
