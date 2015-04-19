@@ -10,14 +10,10 @@
       <a class="item" ng-click="viewClass(class)">
         <div class="row banner">
         </div>
-        <div class="row triangle">
+        <div class="row triangle rating">
           <div class="prof-circle"></div>
-          <p>
-            <i class="ion-star"></i>
-            <i class="ion-star"></i>
-            <i class="ion-star"></i>
-            <i class="ion-star"></i>
-          </p>
+          <div review-directive></div>
+          <h6>{{ class.reviews.length || 0 }}</h6>
         </div>
         <div class="row describe">
           <div class="col col-75">

@@ -147,7 +147,7 @@
     function submitReview(review){
       return $http({
         method: 'POST',
-        url: 'http://localhost:4568/api/user/'+ review.teacher +'/teacher/classes/'+ review.class_id +'/reviews',
+        url: 'http://localhost:4568/api/users/'+ review.teacher_username +'/teacher/classes/'+ review.class_id +'/reviews',
         withCredentials: true,
         data: review,
         headers: {
