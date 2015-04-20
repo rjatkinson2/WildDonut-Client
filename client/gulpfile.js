@@ -4,10 +4,18 @@ var bower = require('bower');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
+var concatCss = require('gulp-concat-css');
 var rename = require('gulp-rename');
+var jshint = require('gulp-jshint');
 var sh = require('shelljs');
+var karma = require('gulp-karma');
+var shell = require('gulp-shell');
 
 var paths = {
+  scripts:  'www/app/**/*.js',
+  appRoot:  'www/app/',
+  html:     'www/app/**/*.html',
+  test:     'www/test/**/*.js',
   sass: ['./scss/**/*.scss']
 };
 
@@ -48,3 +56,26 @@ gulp.task('git-check', function(done) {
   }
   done();
 });
+
+
+gulp.task('lint', function(done){
+  'use strict';
+  return gulp.src(['gulpfile.js', paths.scripts])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'), done);
+});
+
+// new run tests
+gulp.task('karma', function() {
+  return gulp.src('./foobar') // 
+    .pipe(karma({
+      configFile: 'karma.conf.js',
+      action: 'run'
+    }))
+    .on('error', function(err) {
+      throw err;
+    });
+});
+
+// run tests
+gulp.task('test', ['karma']);
