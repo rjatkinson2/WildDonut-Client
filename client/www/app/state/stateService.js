@@ -9,7 +9,7 @@
   function State($cookieStore, $http){
 
     var instance = {};
-
+    instance.username = $cookieStore.get('user').username;
     initializeState()
 
     return instance;
