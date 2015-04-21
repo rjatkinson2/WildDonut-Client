@@ -4,9 +4,9 @@
     .module('wildDonut')
     .controller('StudentManageScheduleController', StudentManageScheduleController);
 
-    StudentManageScheduleController.$inject = ['$scope', '$location', 'ClassManager', 'ReviewManager'];
+    StudentManageScheduleController.$inject = ['$scope', '$location', 'ClassManager', 'ReviewManager', 'State'];
 
-    function StudentManageScheduleController($scope, $location, ClassManager, ReviewManager) {
+    function StudentManageScheduleController($scope, $location, ClassManager, ReviewManager, State) {
 
       $scope.getBookedStudentClasses = function() {
         ClassManager.getBookedStudentClasses().then(function(classes) {
@@ -25,6 +25,14 @@
 
       $scope.getStarsLength = function(num){
         return new Array(num);
+      };
+
+      $scope.studentToggleRoute = function() {
+        $location.path('/' + State.username + '/student/schedule/manage');
+      };
+
+      $scope.teacherToggleRoute = function() {
+        $location.path('/' + State.username + '/teacher/classes/manage');
       };
 
       $scope.init = function() {
