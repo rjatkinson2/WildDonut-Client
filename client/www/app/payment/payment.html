@@ -1,29 +1,47 @@
-<div>
-  <h1>Payments</h1>
-  <form>
-   <span class="payment-errors">{{error}}</span>
-   <div class="row">
-     <label>
-       <span>Card Number</span>
-       <input type="text" ng-model="payment.card" required>
-     </label>
-   </div>
-   <div class="row">
-     <label>
-       <span>Expiration (MM/YYYY)</span>
-       <input type="text" ng-model="payment.month">
-     </label>
-     <input type="text" ng-model="payment.year">
-   </div>
-   <div class="row">
-     <label>
-       <span>CVC</span>
-       <input type="text" ng-model="payment.cvc">
-     </label>
-   </div>
-   <button type="submit" value="Submit" ng-click="charge()">Buy Now</button>
-  </form>
-</div>
-
+<ion-view class="has-header login nav-page hide-back-button='true'" view-title="Checkout">
+<!-- <ion-view class="login" hide-nav-bar="true"> -->
+  <ion-content class="auth-container">
+    <div class="row responsive-md auth-padding">
+      <!-- <div class="payment-logo text-center">
+        <div class="payment-logo logo">Checkout</div>
+      </div> -->
+      <div class="list card">
+        <div class="item item-image">
+          <img src="http://www.bbc.co.uk/staticarchive/4c4874ee3e26f206588456becfe0f2d6117fdac1.jpg">
+        </div>
+        <div class="item item-avatar">
+          <img src="../img/sd.png">
+          <div class="order-footer col col">
+            <div class="row">
+              <div class="col">{{ classname }} </div>
+              <div class="col order-item">${{ rate }}.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="col">
+        <div class="list">
+          <label class="item item-input bare">
+            <i class="icon white ion-ios-world-outline"></i>
+            <input type="text" class="text-center" ng-model="payment.card" placeholder="CARD NUMBER" required>
+          </label>
+          <label class="item item-input bare">
+            <i class="icon white ion-ios-calendar-outline"></i>
+            <input type="text" class="text-right" placeholder="MM" ng-model="payment.month">
+            <input type="text" class="text-left" placeholder="YYYY" ng-model="payment.year">
+          </label>
+          <label class="item item-input bare">
+            <i class="icon white ion-ios-locked-outline"></i>
+            <input type="text" class="text-center" placeholder="CVC" ng-model="payment.cvc">
+          </label>
+          <button name="account" class="button button-large button-stable button-block account-button" value="Submit" ng-click="charge()">
+            Pay ${{rate}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
 
 

@@ -102,7 +102,7 @@
           controller: 'ViewClassController'
         })
         .state('pay', {
-          url: '/pay',
+          url: '/:username/teacher/classes/:id/pay',
           templateUrl: 'app/payment/payment.html',
           controller: 'PaymentController'
         })
@@ -110,6 +110,12 @@
           url: '/:username/teacher/classes/:id/review',
           templateUrl: 'app/review/review.html',
           controller: 'ReviewController'
+        })
+        .state('transfer', {
+          url: '/transfer',
+          templateUrl: 'app/payment/transfer.html',
+          controller: 'PaymentController'
+
         });
     })
     .run(['$ionicPlatform','$rootScope', 'State', '$location', function($ionicPlatform, $rootScope, State, $location) {
