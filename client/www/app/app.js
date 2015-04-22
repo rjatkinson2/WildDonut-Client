@@ -17,7 +17,7 @@
       // full routing for app
       $stateProvider
         .state('login', {
-          url: '/login',
+          url: '/',
           templateUrl: 'app/login/login.html',
           controller: 'LoginController',
           // To prevent screen jumps when entering and leaving input fields
@@ -57,7 +57,7 @@
           }
         })
         .state('browse', {
-          url: '/',
+          url: '/browse',
           templateUrl: 'app/browse/browse.html',
           controller: 'BrowseController'
         })

@@ -7,6 +7,7 @@
     BrowseController.$inject = ['$scope', '$location', 'CollectionManager', 'ReviewManager'];
 
     function BrowseController($scope, $location, CollectionManager, ReviewManager) {
+      alert('inside browse controller - yeaaa');
       $scope.stars = {};
 
       $scope.getAvailableClasses = function() {
