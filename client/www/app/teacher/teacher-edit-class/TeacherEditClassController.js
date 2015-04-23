@@ -4,9 +4,9 @@
     .module('wildDonut')
     .controller('TeacherEditClassController', TeacherEditClassController);
 
-  TeacherEditClassController.$inject = ['$scope', '$stateParams', 'ClassManager'];
+  TeacherEditClassController.$inject = ['$scope', '$stateParams', '$state', 'ClassManager', 'State'];
 
-  function TeacherEditClassController($scope, $stateParams, ClassManager){
+  function TeacherEditClassController($scope, $stateParams, $state, ClassManager, State){
 
     $scope.class_id = $stateParams.id;
 
@@ -18,7 +18,7 @@
 
     $scope.updateClass = function(){
       ClassManager.editClass($scope.classInformation, $scope.class_id).then(function(response){
-        console.log(response);
+        $state.go('manageClasses', {username: State.username}, {reload: true});
       });
     };
 

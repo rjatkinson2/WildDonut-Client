@@ -1,37 +1,37 @@
-<div>
-  <h1>Create Classes View</h1>
-  <form>
+<ion-view class="has-header" view-title="Create Class">
+  <ion-content>
+    <form>
+      <div>
+        <label for="ClassName">Class Name: </label>
+        <input type="text" name="name" ng-model="classInformation.name" required>
+      </div>
 
-    <div>
-      <label for="ClassName">Class Name: </label>
-      <input type="text" name="name" ng-model="classInformation.name" required>
-    </div>
+      <div>
+        <label for="description">description: </label>
+        <input type="text" name="description" ng-model="classInformation.description" required>
+      </div>
 
-    <div>
-      <label for="description">description: </label>
-      <input type="text" name="description" ng-model="classInformation.description" required>
-    </div>
+      <div>
+        <label for="rate">rate: </label>
+        <input type="text" name="rate" ng-model="classInformation.rate" required>
+      </div>
 
-    <div>
-      <label for="rate">rate: </label>
-      <input type="text" name="rate" ng-model="classInformation.rate" required>
-    </div>
+      <div>
+        <label for="date">date: </label>
+        <input type="text" name="date" ng-model="classInformation.date" required>
+      </div>
 
-    <div>
-      <label for="date">date: </label>
-      <input type="text" name="date" ng-model="classInformation.date" required>
-    </div>
+      <div>
+        <label for="time">time: </label>
+        <input type="text" name="time" ng-model="classInformation.time" required>
+      </div>
 
-    <div>
-      <label for="time">time: </label>
-      <input type="text" name="time" ng-model="classInformation.time" required>
-    </div>
+      <div>
+        <label for="location">location: </label>
+        <input type="text" name="location" ng-model="classInformation.location" required>
+      </div>
 
-    <div>
-      <label for="location">location: </label>
-      <input type="text" name="location" ng-model="classInformation.location" required>
-    </div>
-
-    <button type="submit" value="Submit" ng-click="createClass()">Create Class</button>
-  </form>
-</div>
+      <button type="submit" value="Submit" ng-click="createClass()">Create Class</button>
+    </form>
+  </ion-content>
+</ion-view>

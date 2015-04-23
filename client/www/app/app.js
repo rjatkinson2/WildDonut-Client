@@ -77,6 +77,7 @@
           controller: 'StudentManageScheduleController'
         })
         .state('manageClasses', {
+          cache: false,
           url: '/:username/teacher/classes/manage',
           templateUrl: 'app/teacher/teacher-manage-classes/teacher-manage-classes.html',
           controller: 'TeacherManageClassesController'

@@ -1,6 +1,14 @@
 <ion-view class="has-header" view-title="Manage Schedule">
+  <div class="tabs toggle-tabs">
+    <a ng-click="studentToggleRoute()" class="tab-item">
+      Student
+    </a>
+    <a ng-click="teacherToggleRoute()" class="tab-item">
+      Teacher
+    </a>
+  </div>
   <ion-content>
-    <div class="list row" ng-repeat="class in classes">
+    <div class="list row toggle-row" ng-repeat="class in classes">
       <div class="col col-67">
         <h4>{{ class.name }}</h4>
         <div>{{ class.description }}</div>

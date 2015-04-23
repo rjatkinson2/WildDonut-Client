@@ -1,19 +1,28 @@
-<div>
-
-  <button ng-click="addClass()">Add New Class</button>
-
-  <div ng-repeat="class in allClasses">
-
-    name: {{class.name}}<br>
-
-    id: {{class._id}}<br>
-
-    description: {{class.description}}<br>
-
-    <button ng-click="editClass(class._id)">Edit Class</button>
-    <button ng-click="deleteClass(class._id)">Delete Class</button>
-
+<ion-view class="has-header" view-title="Manage Schedule">
+  <div class="tabs toggle-tabs">
+    <a ng-click="studentToggleRoute()" class="tab-item">
+      Student
+    </a>
+    <a ng-click="teacherToggleRoute()" class="tab-item">
+      Teacher
+    </a>
   </div>
-
-
-</div>
+  <ion-content>
+    <div class="toggle-row">
+      <button ng-click="addClass()">New Class</button>
+      <div class="list row" ng-repeat="class in allClasses">
+        <div class="col col-67">
+          <h4>{{ class.name }}</h4>
+          <div>{{ class.description }}</div>
+          <div>{{ class.date | date:"MM-dd-yy '@' h:mma" }}</div>
+          <div>{{ class.teacher_name }}</div>
+          <div>end_time: {{ class.end_time | date:"MM-dd-yy '@' h:mma" }}</div>
+          <div>truelocation: {{ class.truelocation }}</div>
+          <div>rate: {{ class.rate }}</div>
+          <div>start_time: {{ class.start_time | date:"MM-dd-yy '@' h:mma" }}</div>
+          <button ng-click="editClass(class._id)">Edit Class</button>
+          <button ng-click="deleteClass(class._id)">Delete Class</button>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>
