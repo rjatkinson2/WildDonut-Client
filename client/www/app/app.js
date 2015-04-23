@@ -6,11 +6,13 @@
 (function() {
 
   angular
-    .module('wildDonut', ['ionic', 'ui.router', 'facebook', 'ionic.rating', 'ngCookies'])
+    .module('wildDonut', ['ionic', 'ui.router', 'facebook', 'ionic.rating', 'ngCookies', 'ngCordova'])
     .config(function($stateProvider, $urlRouterProvider, FacebookProvider, $ionicConfigProvider) {
 
+      // Remove back button text throughout app
       $ionicConfigProvider.backButton.previousTitleText(false).text('  ');
 
+      // FB authentication
       FacebookProvider.init('489613531189387');
 
       // for any unmatched urls, redirect to /home
