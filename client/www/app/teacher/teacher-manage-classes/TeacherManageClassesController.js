@@ -28,6 +28,10 @@
       });
     };
 
+    $scope.viewClass = function(classInstance) {
+      $state.go('viewClass', {id: classInstance._id});
+    };
+
     $scope.studentToggleRoute = function() {
       $state.go('studentSchedule', {username: State.username}, {reload: true});
     };
@@ -38,6 +42,7 @@
 
     $scope.init = function(){
       $scope.getAllClasses();
+      $scope.listCanSwipe = true;
     };
 
     $scope.init();
