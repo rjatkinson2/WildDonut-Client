@@ -4,11 +4,12 @@
     .module('wildDonut')
     .controller('ViewClassController', ViewClassController);
 
-  ViewClassController.$inject = ['$scope', '$stateParams', '$location', 'ClassManager', 'ReviewManager', 'State'];
+  ViewClassController.$inject = ['$scope', '$stateParams', '$location', 'ClassManager', 'ReviewManager', 'UserManager', 'State'];
 
-  function ViewClassController($scope, $stateParams, $location, ClassManager, ReviewManager, State){
+  function ViewClassController($scope, $stateParams, $location, ClassManager, ReviewManager, UserManager, State){
     $scope.class_id = $stateParams.id;
-    console.log($location.path());
+    $scope.teacher_username = $stateParams.username;
+    $scope.classes = [];
 
     $scope.getClass = function(){
       ClassManager.getClass($scope.class_id).then(function(classInfo){
@@ -17,23 +18,12 @@
       });
     };
 
-    $scope.bookClass = function(){
-      $scope.classInformation.student_id = State.user_id;
-      $scope.classInformation.class_id = $scope.classInformation._id;
-
-      ClassManager.bookClass($scope.classInformation).then(function(response){
-        $location.path('/' + $scope.classInformation.student_id + '/student/schedule/manage');
-      });
-    };
-
     $scope.getStarsLength = function(num){
       return new Array(num);
     };
-    $scope.bookAndPay = function(){
-      $scope.classInformation.student_id = State.user_id;
-      $scope.classInformation.class_id = $scope.classInformation._id;
-
-      $location.path('/' + 'pay');
+    $scope.bookAndPay = function(class_id){
+      console.log("id", class_id);
+      $location.path('/'+ $scope.teacher_username + '/teacher/classes/'+class_id+'/pay');
     };
 
     $scope.init = function(){

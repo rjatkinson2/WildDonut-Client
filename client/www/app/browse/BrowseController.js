@@ -4,9 +4,9 @@
     .module('wildDonut')
     .controller('BrowseController', BrowseController);
 
-    BrowseController.$inject = ['$scope', '$location', 'CollectionManager', 'ReviewManager'];
+    BrowseController.$inject = ['$scope', '$location', 'CollectionManager', 'ReviewManager', 'State'];
 
-    function BrowseController($scope, $location, CollectionManager, ReviewManager) {
+    function BrowseController($scope, $location, CollectionManager, ReviewManager, State) {
       $scope.stars = {};
 
       $scope.getAvailableClasses = function() {
@@ -18,10 +18,11 @@
         });
       };
 
+      $scope.viewProfile = function(classInstance) {
+        $location.path('/' + classInstance.teacher.username + '/profile');
+      };
+
       $scope.viewClass = function(classInstance) {
-        State.rate = classInstance.rate;
-        State.class_name = classInstance.name;
-        State.class_id = classInstance._id;
         $location.path('/' + classInstance.teacher.username + '/teacher/classes/' + classInstance._id);
       };
 

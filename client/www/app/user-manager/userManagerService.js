@@ -30,10 +30,10 @@
         });
       }
 
-      function getProfileData() {
+      function getProfileData(username) {
         return $http({
           method: 'GET',
-          url: 'http://localhost:4568/api/users/' + State.username,
+          url: 'http://localhost:4568/api/users/' + username,
           withCredentials: true,
           headers: {
             'Content-Type': 'application/json'
