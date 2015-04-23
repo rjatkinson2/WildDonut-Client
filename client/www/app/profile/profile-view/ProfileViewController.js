@@ -1,28 +1,40 @@
-(function() {
+(function(){
 
   angular
     .module('wildDonut')
     .controller('ProfileViewController', ProfileViewController);
 
-    ProfileViewController.$inject = ['$scope', 'UserManager', 'State'];
+  ProfileViewController.$inject = ['$scope', '$stateParams', '$location', 'ClassManager', 'ReviewManager', 'UserManager', 'State'];
 
-    function ProfileViewController($scope, UserManager, State) {
+  function ProfileViewController($scope, $stateParams, $location, ClassManager, ReviewManager, UserManager, State){
+    $scope.class_id = $stateParams.id;
+    $scope.teacher_username = $stateParams.username;
+    $scope.classes = [];
 
-      $scope.isTeacher = State.isTeacher;
+    $scope.getAvailableTeacherClasses = function(){
+      ClassManager.getAvailableTeacherClasses($scope.teacher_username).then(function(classes){
+        $scope.classes = classes;
+      });
+      UserManager.getProfileData($scope.teacher_username).then(function(response){
+        console.log(response.data);
+        $scope.teacher = response.data;
+      })
+    };
 
-      $scope.getProfileData = function() {
-        //need to pass in a username
-        UserManager.getProfileData().then(function(profile) {
-          $scope.profile = profile.data;
-        });
-      };
+    $scope.getStarsLength = function(num){
+      return new Array(num);
+    };
 
-      $scope.init = function() {
-        $scope.getProfileData();
-      };
+    $scope.viewClass = function(classInstance) {
+      console.log(classInstance, classInstance)
+      $location.path('/' + $scope.teacher_username + '/teacher/classes/' + classInstance._id);
+    };
 
-      $scope.init();
+    $scope.init = function(){
+      $scope.getAvailableTeacherClasses();
+    };
 
-    }
+    $scope.init();
+  }
 
 })();

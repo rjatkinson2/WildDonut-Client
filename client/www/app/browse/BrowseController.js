@@ -18,6 +18,10 @@
         });
       };
 
+      $scope.viewProfile = function(classInstance) {
+        $location.path('/' + classInstance.teacher.username + '/profile');
+      };
+
       $scope.viewClass = function(classInstance) {
         $location.path('/' + classInstance.teacher.username + '/teacher/classes/' + classInstance._id);
       };

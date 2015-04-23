@@ -10,18 +10,12 @@
     $scope.class_id = $stateParams.id;
     $scope.teacher_username = $stateParams.username;
     $scope.classes = [];
-    console.log($location.path());
 
-    $scope.getAvailableTeacherClasses = function(){
-      ClassManager.getAvailableTeacherClasses($scope.teacher_username).then(function(classes){
-        console.log("classInfo", classes);
-        // $scope.classInformation = classInfo;
-        $scope.classes = classes;
+    $scope.getClass = function(){
+      ClassManager.getClass($scope.class_id).then(function(classInfo){
+        $scope.classInformation = classInfo;
+        $scope.classInformation.stars = ReviewManager.getStars(classInfo.avg_rating);
       });
-      UserManager.getProfileData($scope.teacher_username).then(function(response){
-        console.log(response.data);
-        $scope.teacher = response.data;
-      })
     };
 
     $scope.getStarsLength = function(num){
@@ -29,14 +23,11 @@
     };
     $scope.bookAndPay = function(class_id){
       console.log("id", class_id);
-      // $scope.classInformation.student_id = State.user_id;
-      // $scope.classInformation.class_id = $scope.classInformation._id;
-
       $location.path('/'+ $scope.teacher_username + '/teacher/classes/'+class_id+'/pay');
     };
 
     $scope.init = function(){
-      $scope.getAvailableTeacherClasses();
+      $scope.getClass();
     };
 
     $scope.init();
