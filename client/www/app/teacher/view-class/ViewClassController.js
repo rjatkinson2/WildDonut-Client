@@ -21,9 +21,8 @@
     $scope.getStarsLength = function(num){
       return new Array(num);
     };
-    $scope.bookAndPay = function(class_id){
-      console.log("id", class_id);
-      $location.path('/'+ $scope.teacher_username + '/teacher/classes/'+class_id+'/pay');
+    $scope.bookAndPay = function(){
+      $location.path('/' + $scope.teacher_username + '/teacher/classes/' + $scope.class_id + '/pay');
     };
 
     $scope.init = function(){

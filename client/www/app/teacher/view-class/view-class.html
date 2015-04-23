@@ -1,4 +1,5 @@
-<ion-view class="has-header" view-title="{{classInformation.name}}">
+<ion-view>
+  <ion-nav-title>{{classInformation.name}}</ion-nav-title>
   <ion-content>
     <div class="class-img-background">
       <div class="menu-profile-image text-center">
@@ -17,44 +18,47 @@
             </p>
           </div>
         </div>  
-        </div>
       </div>
     </div>
     <div class="col profile-container">
-    <h4 class="profile-class-title">Description</h4>
-    <div>{{classInformation.description}}</div>
-    <h4 class="profile-class-title">Class Detail</h4>
-      <div class="list" ng-repeat="class in classes">
-        <div class="item item-profile">
-          <div class="row describe">
-            <div class="col col-75">
-              <div class="row">
-                <h4>{{ class.name }}</h4>
-              </div>
-              <div class="row triangle rating">
-                <h6>{{ class.date | date:"MM-dd-yy '@' h:mma"}}</h6>
-                <div review-directive></div>
-                <h6>{{ class.reviews.length || 0 }}</h6>
-              </div>
-            </div>
-            <div class="col col-top rate rate-profile">
-              <div ng-click="bookAndPay(class._id)"><h5>${{ class.rate }}</h5></div>
-            </div>
+      <h4 class="profile-class-title">Description</h4>
+      <div class="class-description">{{classInformation.name}}</div>
+      <div class="class-description">{{classInformation.description}}</div>
+      <h4 class="profile-class-title">Class Details</h4>
+      <div class="row">
+        <div class="col col-50">
+          <div class="row">
+            <div class="ion-ios-calendar-outline class-icons"></div>
+            <h6 class="class-details">{{ classInformation.date | date:"MM-dd-yy"}}</h6>
+          </div>
+        </div>  
+        <div class="col col-50">
+          <div class="row">
+            <div class="ion-ios-time-outline class-icons"></div>
+            <h6 class="class-details">{{ classInformation.start_time | date:"h'pm-'"}}{{ classInformation.end_time | date:"h'pm'"}}</h6>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-          <div class="col col-67">
-            <div>rate ($): {{classInformation.rate}}</div>
-            <div>date: {{classInformation.date}}</div>
-            <div>start: {{classInformation.start_time}}</div>
-            <div>end: {{classInformation.end_time}}</div>
-            <div>location: {{classInformation.location}}</div>
-          <div class="col col-center">
-            <button class="button button-positive" ng-click="bookAndPay()">Book Class</button>
+      <div class="row">
+        <div class="col col-50">
+          <div class="row">
+            <div class="ion-ios-location-outline class-icons"></div>
+            <h6 class="class-details">{{ classInformation.location}}</h6>
+          </div>
+        </div>  
+        <div class="col col-50">
+          <div class="row">
+            <div class="ion-ios-pricetag-outline class-icons"></div>
+            <h6 class="class-details">${{ classInformation.rate }}</h6>
           </div>
         </div>
+      </div>
+      <div class="row">
+        <div class="col col-center">
+          <button class="button button-positive book-class" ng-click="bookAndPay()">Book Class</button>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
 
