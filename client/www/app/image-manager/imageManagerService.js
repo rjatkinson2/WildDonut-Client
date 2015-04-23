@@ -16,19 +16,9 @@
 
       // implementation of functions
       function postSelectedImage(image) {
-        var test2 = { fieldname: 'file1',
-              originalname: '2008-08-25 15.24.01.jpg',
-              name: 'e6b651c5b6ac361e3dfeb6df9b8f1fdf.jpg',
-              encoding: '7bit',
-              mimetype: 'image/jpeg',
-              path: image.toString(),
-              extension: 'jpg',
-              size: 451248,
-              truncated: false,
-              buffer: null };
         var uploadUrl = "http://localhost:4568/api/images/user/s3upload";
         var fd = new FormData();
-        fd.append('file1', test2);
+        fd.append('file1', image);
         fd.append('userName', 'Joey');
         alert('down here now');
         $http.post(uploadUrl, fd, {
