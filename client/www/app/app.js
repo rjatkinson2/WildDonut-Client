@@ -6,7 +6,7 @@
 (function() {
 
   angular
-    .module('wildDonut', ['ionic', 'ui.router', 'facebook', 'ionic.rating', 'ngCookies'])
+    .module('wildDonut', ['ionic', 'ui.router', 'facebook', 'ionic.rating', 'ngCookies', 'angularFileUpload'])
     .config(function($stateProvider, $urlRouterProvider, FacebookProvider) {
 
       FacebookProvider.init('489613531189387');

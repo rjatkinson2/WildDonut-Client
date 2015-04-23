@@ -4,9 +4,9 @@
     .module('wildDonut')
     .factory('ImageManager', ImageManager);
 
-    ImageManager.$inject = ['$http'];
+    ImageManager.$inject = ['$http', '$upload'];
 
-    function ImageManager($http) {
+    function ImageManager($http, $upload) {
 
       var instance = {
         postSelectedImage: postSelectedImage
@@ -16,31 +16,48 @@
 
       // implementation of functions
       function postSelectedImage(image) {
-        // !! Assumes variable image is a valid URL to a text file on the device,
-        //    for example, cdvfile://localhost/persistent/path/to/file.txt
-        var success = function (r) {
-            // alert("Code = " + r.responseCode);
-            alert("Response = " + r.response);
-            alert("Headers = " + r.headers);
-            // alert("Sent = " + r.bytesSent);
-        };
+        var test2 = { fieldname: 'file1',
+              originalname: '2008-08-25 15.24.01.jpg',
+              name: 'e6b651c5b6ac361e3dfeb6df9b8f1fdf.jpg',
+              encoding: '7bit',
+              mimetype: 'image/jpeg',
+              path: image.toString(),
+              extension: 'jpg',
+              size: 451248,
+              truncated: false,
+              buffer: null };
+        var uploadUrl = "http://localhost:4568/api/images/user/s3upload";
+        var fd = new FormData();
+        fd.append('file1', test2);
+        fd.append('userName', 'Joey');
+        alert('down here now');
+        $http.post(uploadUrl, fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        })
+        .success(function(test){
+          alert(test);
+          alert('success');
+        })
+        .error(function(test2){
+          alert(test2);
+          alert('error');
+        });
 
-        var failure = function (error) {
-            alert("An error has occurred: Code = " + error.code);
-            alert("upload error source " + error.source);
-            alert("upload error target " + error.target);
-        };
-
-        var uri = encodeURI("http://localhost:4568/api/images/user/s3upload");
-        var options = new FileUploadOptions();
-        options.fileKey = "file";
-        options.fileName = "newImage.jpg";
-        options.mimeType = "image/jpeg";
-        // options.params = {};
-        // options.params.value1 = "test";
-        // options.params.value2 = "param";
-        var ft = new FileTransfer();
-        ft.upload(image, uri, success, failure, options);
+        // $upload.upload({
+        //   url: 'http://localhost:4568/api/images/user/s3upload',
+        //   fields: {
+        //       'userName': 'ryan'
+        //   },
+        //   file: image
+        // })
+        // .progress(function (evt) {
+        //   var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+        //   alert('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+        // })
+        // .success(function (data, status, headers, config) {
+        //   alert('file ' + config.file.name + 'uploaded. Response: ' + JSON.stringify(data));
+        // });
       }
 
     }
