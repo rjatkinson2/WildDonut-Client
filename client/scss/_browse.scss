@@ -18,7 +18,7 @@
 
 .row.banner{
   //ultimately overwrite this background-image with angular
-  background-image: url(../img/classBanner.png);
+  background-image: url(http://farm3.static.flickr.com/2222/2260860517_e92b1d0f00.jpg?v=0);
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -60,4 +60,10 @@
 .triangle{
   width: 100%;
   background-color: #FFF;
+}
+
+.browse-cover {
+  margin: 0;
+  padding: 0;
+  border: none;
 }

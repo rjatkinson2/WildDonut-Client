@@ -1,4 +1,5 @@
-<ion-view class="has-header" view-title="{{teacher.first_name}} {{teacher.last_name}}" >
+<ion-view>
+  <ion-nav-title>{{teacher.first_name}} {{teacher.last_name || 'Profile'}}</ion-nav-title>
   <ion-content>
     <div class="profile-img-background">
       <div class="menu-profile-image text-center">
@@ -9,7 +10,8 @@
             <div class="teacher-classes">Classes</div>
           </div>  
           <div class="col col-30">
-            <div class="teacher-rating">{{ teacher.avg_rating || "0" }}</div>
+            <!-- <div class="teacher-rating">4</div> -->
+            <div class="teacher-rating">{{ teacher.avg_rating | number:1 || "0" }}</div>
             <div class="teacher-classes">Rating</div>
           </div>
           <div class="col col-30">
