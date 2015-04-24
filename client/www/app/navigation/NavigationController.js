@@ -64,6 +64,19 @@
         $location.path('/login');
       });
     };
+
+    // Logic to show or hide side menu icon
+    // Uses show-element and hide-element css classes
+    $scope.showSideMenuButton = function() {
+      if (
+        $location.path() === '/' ||
+        $location.path() === '/' + State.username + '/teacher/classes/manage' ||
+        $location.path() === '/'  + State.username + '/student/schedule/manage'
+        ) 
+      {
+        return 'show-element';
+      }
+    };
   }
 
 })();

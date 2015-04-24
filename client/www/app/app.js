@@ -21,6 +21,7 @@
       // full routing for app
       $stateProvider
         .state('login', {
+          cache: false,
           url: '/login',
           templateUrl: 'app/login/login.html',
           controller: 'LoginController',
