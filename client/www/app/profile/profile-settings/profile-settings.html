@@ -4,15 +4,18 @@
     <label class="item item-input">
       <input type="text" placeholder="{{profile.first_name || 'First Name'}}" ng-model="profile.first_name">
     </label>
+    
     <label class="item item-input">
       <input type="text" placeholder="Last Name" ng-model="profile.last_name">
     </label>
+    
     <label class="item item-input">
       <textarea placeholder="Bio" ng-model="profile.bio"></textarea>
     </label>
-    <label class="item item-input">
-      <input type="text" placeholder="Picture Url" ng-model="profile.picture_url">
-    </label>
+
+    <div class="button" ng-file-select ng-file-change="upload($files)" ng-multiple="multiple">Select File</div>
+    <img ng-src="{{ profile.picture_url || 'img/sd.png'}}" height="150px"/>
+    
     <label ng-if="isTeacher" class="item item-input">
       <input type="text" placeholder="Skills" ng-model="profile.skills">
     </label>

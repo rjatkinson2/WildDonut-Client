@@ -7,6 +7,12 @@
       </div>
 
       <div>
+        <label for="ClassPhoto">Class Photo: </label>
+        <div class="button" ng-file-select ng-file-change="upload($files)" ng-multiple="multiple">Select File</div>
+        <img ng-src="{{ classInformation.picture_url || 'img/sd.png'}}" height="150px"/>
+      </div>
+
+      <div>
         <label for="description">description: </label>
         <input type="text" name="description" ng-model="classInformation.description" required>
       </div>

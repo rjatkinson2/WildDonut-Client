@@ -4,9 +4,9 @@
     .module('wildDonut')
     .controller('TeacherCreateClassController', TeacherCreateClassController);
 
-  TeacherCreateClassController.$inject = ['$scope', '$state', 'ClassManager', 'State'];
+  TeacherCreateClassController.$inject = ['$scope', '$state', 'ImageManager', 'ClassManager', 'State'];
 
-  function TeacherCreateClassController($scope, $state, ClassManager, State){
+  function TeacherCreateClassController($scope, $state, ImageManager, ClassManager, State){
     $scope.classInformation = {};
 
     $scope.setDate = function() {
@@ -32,6 +32,12 @@
     $scope.createClass = function(){
       ClassManager.createClass($scope.classInformation).then(function() {
         $state.go('manageClasses', {username: State.username}, {reload: true});
+      });
+    };
+
+    $scope.upload = function (files) {
+      ImageManager.postSelectedImage(files, $scope.classInformation.name, 'class', function(url){
+        $scope.classInformation.picture_url = url;
       });
     };
   }
