@@ -1,28 +1,36 @@
-<ion-view class="has-header" view-title="Manage Schedule">
-  <div class="tabs toggle-tabs">
-    <a ng-click="studentToggleRoute()" class="tab-item">
-      Student
-    </a>
-    <a ng-click="teacherToggleRoute()" class="tab-item">
-      Teacher
-    </a>
+<ion-view class="has-header" view-title="Manage Classes">
+  <div class="tabs-striped tabs-top">
+    <div class="tabs">
+      <button ng-click="studentToggleRoute()" class="button button-outline button-stable button-toggle">
+        Student
+      </button>
+      <button ng-click="teacherToggleRoute()" class="button button-outline button-stable active button-toggle">
+        Teacher
+      </button>
+    </div>
   </div>
   <ion-content>
-    <div class="toggle-row">
-      <button ng-click="addClass()">New Class</button>
-      <div class="list row" ng-repeat="class in allClasses">
-        <div class="col col-67">
-          <h4>{{ class.name }}</h4>
-          <div>{{ class.description }}</div>
-          <div>{{ class.date | date:"MM-dd-yy '@' h:mma" }}</div>
-          <div>{{ class.teacher_name }}</div>
-          <div>end_time: {{ class.end_time | date:"MM-dd-yy '@' h:mma" }}</div>
-          <div>truelocation: {{ class.truelocation }}</div>
-          <div>rate: {{ class.rate }}</div>
-          <div>start_time: {{ class.start_time | date:"MM-dd-yy '@' h:mma" }}</div>
-          <button ng-click="editClass(class._id)">Edit Class</button>
-          <button ng-click="deleteClass(class._id)">Delete Class</button>
+    <ion-list class="list-with-toggle" can-swipe="listCanSwipe">
+      <ion-item class="class" ng-repeat="class in allClasses">
+        <ion-option-button ng-click="editClass(class._id)">Edit</ion-option-button>
+        <ion-option-button ng-click="deleteClass(class._id)">Delete</ion-option-button>
+        <div class="row">
+          <div class="col col-75">
+            <div class="row">
+              <h4 ng-click="viewClass(class)">{{ class.name }}</h4>
+            </div>
+            <div class="row triangle rating">
+              <h6>{{ class.date | date:"MM-dd-yy '@' h:mma"}}</h6>
+            </div>
+          </div>
+          <div class="col col-top rate rate-profile">
+            <div><h5>${{ class.rate }}</h5></div>
+          </div>
         </div>
-    </div>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
+<div class="bar bar-footer bar-action-button">
+  <div ng-click="addClass()" class="button-title">New Class</div>
+</div>

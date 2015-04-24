@@ -6,7 +6,7 @@ a {
   text-decoration: none;
 }
 
-a, row{
+a {
   padding: 0 !important;
 }
 
@@ -55,13 +55,13 @@ h6 {
 .item h4{
   @extend h4;
   display:block;
-  clear:both
+  clear:both;
 }
 
 .item h5{
   @extend h5;
   display:block;
-  clear:both
+  clear:both;
 }
 
 .item h6{
@@ -92,3 +92,7 @@ h6 {
   border: none;
 }
 
+.tabs-striped .tabs {
+  padding-top: 12px;
+  border: none;
+}

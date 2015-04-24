@@ -1,11 +1,13 @@
-<ion-view class="has-header" view-title="Manage Schedule">
-  <div class="tabs toggle-tabs">
-    <a ng-click="studentToggleRoute()" class="tab-item">
-      Student
-    </a>
-    <a ng-click="teacherToggleRoute()" class="tab-item">
-      Teacher
-    </a>
+<ion-view class="has-header" hide-back-button="true" view-title="Schedule">
+  <div class="tabs-striped tabs-top">
+    <div class="tabs">
+      <button ng-click="studentToggleRoute()" class="button button-outline button-stable active button-toggle">
+        Student
+      </button>
+      <button ng-click="teacherToggleRoute()" class="button button-outline button-stable button-toggle">
+        Teacher
+      </button>
+    </div>
   </div>
   <ion-content>
     <div class="list row toggle-row" ng-repeat="class in classes">

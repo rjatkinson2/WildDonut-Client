@@ -56,3 +56,43 @@
 .button.social-login-button:hover {
   color: $theme-blue;
 }
+
+.button-toggle {
+  height: 30px;
+  min-height: 30px;
+  line-height: 15px;
+}
+
+.button-toggle-border {
+  border-left: none;
+}
+
+.button-stable.active {
+  background-color: #b2b2b2;
+}
+
+// Footer action button
+.bar-action-button {
+  background-color: $theme-green;
+  border: none;
+}
+
+.button-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+  margin: 0 10px;
+  min-width: 30px;
+  height: 43px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 44px;
+}
