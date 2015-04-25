@@ -9,7 +9,8 @@
   function State($cookieStore, $http){
 
     var instance = {};
-    instance.username = $cookieStore.get('user') && $cookieStore.get('user').username;
+    instance.user = {};
+    instance.user.username = $cookieStore.get('user') && $cookieStore.get('user').username;
     initializeState()
 
     return instance;
@@ -25,9 +26,9 @@
             'Content-Type': 'application/json',
           }
         }).then(function(response){
-          instance.username = response.data.username;
-          instance.user_id = response.data._id;
-          instance.isTeacher = response.data.teacher;
+          instance.user.username = response.data.username;
+          instance.user.user_id = response.data._id;
+          instance.user.isTeacher = response.data.teacher;
           return response;
         });
       }

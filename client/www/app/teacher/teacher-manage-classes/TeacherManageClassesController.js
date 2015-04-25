@@ -1,3 +1,6 @@
+
+
+
 (function(){
 
   angular
@@ -15,11 +18,11 @@
     };
 
     $scope.addClass = function(){
-      $location.url('/' + State.username + '/teacher/classes/new');
+      $location.url('/' + State.user.username + '/teacher/classes/new');
     };
 
     $scope.editClass = function(class_id){
-      $location.url('/' + State.username + '/teacher/classes/' + class_id + '/edit');
+      $location.url('/' + State.user.username + '/teacher/classes/' + class_id + '/edit');
     };
 
     $scope.deleteClass = function(class_id){

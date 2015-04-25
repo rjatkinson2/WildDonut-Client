@@ -26,7 +26,7 @@
 
       // Create the class
       ClassManager.createClass($scope.classInformation).then(function(err) {
-        $state.go('manageClasses', {username: State.username}, {reload: true});
+        $state.go('manageClasses', {username: State.user.username}, {reload: true});
       });
     };
 

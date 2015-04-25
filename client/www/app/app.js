@@ -22,7 +22,7 @@
       $stateProvider
         .state('login', {
           cache: false,
-          url: '/login',
+          url: '/',
           templateUrl: 'app/login/login.html',
           controller: 'LoginController',
           // To prevent screen jumps when entering and leaving input fields
@@ -62,7 +62,7 @@
           }
         })
         .state('browse', {
-          url: '/',
+          url: '/browse',
           templateUrl: 'app/browse/browse.html',
           controller: 'BrowseController'
         })
@@ -124,13 +124,19 @@
 
         });
     })
-    .run(['$ionicPlatform','$rootScope', 'State', '$location', function($ionicPlatform, $rootScope, State, $location) {
+    .run(['$ionicPlatform','$rootScope', 'State', '$location', '$cookieStore', function($ionicPlatform, $rootScope, State, $location, $cookieStore) {
+      
+      // Check for user cookie and redirect to browse if found
+      // Do this immediately on app run
+      if ($cookieStore.get('user')) {
+        $location.path('/browse');
+      }
 
       $ionicPlatform.ready(function() {
 
         $rootScope.$on('$stateChangeStart', function(event){
-          if (!State.username && (['/login', '/signup'].indexOf($location.path()) === -1)){
-            $location.path('/login');
+          if (!State.user.username && (['/', '/signup'].indexOf($location.path()) === -1)){
+            $location.path('/');
             return false;
           }
         });

@@ -6,13 +6,12 @@
   ReviewController.$inject = ['$scope', '$location', '$stateParams', 'State', 'ClassManager'];
 
   function ReviewController($scope, $location, $stateParams, State, ClassManager){
-    console.log(State.username);
     $scope.classInfo = {};
 
     $scope.review = {};
     $scope.review.review = null;
     //ultimately below should be just student's name, but State needs updated to carry both username and name
-    $scope.review.student_name = State.username; 
+    $scope.review.student_name = State.user.username; 
     $scope.review.teacher_username = $stateParams.username;
     $scope.review.class_id = $stateParams.id;
 
