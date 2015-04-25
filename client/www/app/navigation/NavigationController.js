@@ -70,12 +70,19 @@
     $scope.showSideMenuButton = function() {
       if (
         $location.path() === '/' ||
+        $location.path() === '/' + State.username + '/teacher/classes/booked' ||
         $location.path() === '/' + State.username + '/teacher/classes/manage' ||
         $location.path() === '/'  + State.username + '/student/schedule/manage'
         ) 
       {
         return 'show-element';
       }
+    };
+
+    // Logic to show action buttons on right side of nav header bar
+    $scope.showActionButton = function() {
+      var showButton = ($location.path() === '/' + State.username + '/teacher/classes/booked');
+      return showButton ? 'button button-icon icon ion-ios-gear' : 'hide-element';
     };
   }
 

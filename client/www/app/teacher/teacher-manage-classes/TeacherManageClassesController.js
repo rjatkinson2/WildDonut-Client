@@ -24,20 +24,12 @@
 
     $scope.deleteClass = function(class_id){
       ClassManager.deleteClass(class_id).then(function() {
-        $state.go('manageClasses', {username: State.username}, {reload: true});
+        $scope.getAllClasses();
       });
     };
 
     $scope.viewClass = function(classInstance) {
       $state.go('viewClass', {id: classInstance._id});
-    };
-
-    $scope.studentToggleRoute = function() {
-      $state.go('studentSchedule', {username: State.username}, {reload: true});
-    };
-
-    $scope.teacherToggleRoute = function() {
-      $state.go('manageClasses', {username: State.username}, {reload: true});
     };
 
     $scope.init = function(){

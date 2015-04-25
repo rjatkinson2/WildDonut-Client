@@ -1,31 +1,41 @@
 <ion-view class="has-header" view-title="Edit Class">
   <ion-content>
-    <div>
-      <form>
-        name: {{classInformation.name}}<br>
-        <input type="text" name="classname" ng-model="classInformation.name" required>
-
-        description: {{classInformation.description}}<br>
-        <input type="text" name="description" ng-model="classInformation.description" required>
-
-
-        rate ($): {{classInformation.rate}}<br>
-        <input type="text" name="rate" ng-model="classInformation.rate" required>
-
-
-        date: {{classInformation.date}}<br>
-        <input type="text" name="date" ng-click="setDate()" ng-model="classInformation.date" required>
-
-
-        time: {{classInformation.time}}<br>
-        <input type="text" name="time" ng-click="setTime()" ng-model="classInformation.time" required>
-
-
-        location: {{classInformation.location}}<br>
-        <input type="text" name="location" ng-model="classInformation.location" required>
-
-        <button type="submit" value="Submit" ng-click="updateClass()">Update Class</button>
-      </form>
+  <div class="row responsive-md">
+    <div class="col">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Class Name</span>
+          <input type="text" ng-model="classInformation.name">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Location</span>
+          <input type="text" ng-model="classInformation.location">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Price</span>
+          <input type="text" ng-model="classInformation.rate">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Date</span>
+          <input type="date" id="date" ng-model="classInformation.date">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Start Time</span>
+          <input type="time" id="startTime" ng-model="classInformation.start_time">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">End Time</span>
+          <input type="time" id="endTime" ng-model="classInformation.end_time">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Description</span>
+          <textarea rows="6" ng-model="classInformation.description"></textarea>
+        </label>
+        <button name="login" class="button button-block button-action" ng-click="updateClass()">
+          UPDATE CLASS
+        </button>
+      </div>
     </div>
+  </div>
   </ion-content>
 </ion-view>

@@ -1,43 +1,45 @@
 <ion-view class="has-header" view-title="Create Class">
   <ion-content>
-    <form>
-      <div>
-        <label for="ClassName">Class Name: </label>
-        <input type="text" name="name" ng-model="classInformation.name" required>
+    <div class="row responsive-md">
+      <div class="col">
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Class Name</span>
+            <input type="text" ng-model="classInformation.name">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Location</span>
+            <input type="text" ng-model="classInformation.location">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Price</span>
+            <input type="text" ng-model="classInformation.rate">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Date</span>
+            <input type="date" id="date" ng-model="classInformation.date">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Start Time</span>
+            <input type="time" id="startTime" ng-model="classInformation.start_time">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">End Time</span>
+            <input type="time" id="endTime" ng-model="classInformation.end_time">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Description</span>
+            <textarea rows="6" ng-model="classInformation.description"></textarea>
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Class Photo</span>
+            <div class="button button-stable" ng-file-select ng-file-change="upload($files)" ng-multiple="multiple">Choose</div>
+          </label>
+          <img class="block-image" style="background-image: url({{ classInformation.picture_url || 'img/default-class-image.png'}});" />
+          <button name="login" class="button button-block button-action" ng-click="createClass()">
+            CREATE CLASS
+          </button>
+        </div>
       </div>
-
-      <div>
-        <label for="ClassPhoto">Class Photo: </label>
-        <div class="button" ng-file-select ng-file-change="upload($files)" ng-multiple="multiple">Select File</div>
-        <img ng-src="{{ classInformation.picture_url || 'img/sd.png'}}" height="150px"/>
-      </div>
-
-      <div>
-        <label for="description">description: </label>
-        <input type="text" name="description" ng-model="classInformation.description" required>
-      </div>
-
-      <div>
-        <label for="rate">rate: </label>
-        <input type="text" name="rate" ng-model="classInformation.rate" required>
-      </div>
-
-      <div>
-        <label for="date">date: </label>
-        <input type="text" name="date" ng-click="setDate()" ng-model="classInformation.date" required>
-      </div>
-
-      <div>
-        <label for="time">time: </label>
-        <input type="text" name="time" ng-click="setTime()" ng-model="classInformation.time" required>
-      </div>
-
-      <div>
-        <label for="location">location: </label>
-        <input type="text" name="location" ng-model="classInformation.location" required>
-      </div>
-
-      <button type="submit" value="Submit" ng-click="createClass()">Create Class</button>
-    </form>
   </ion-content>
 </ion-view>

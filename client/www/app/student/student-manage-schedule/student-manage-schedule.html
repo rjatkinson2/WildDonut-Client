@@ -10,24 +10,25 @@
     </div>
   </div>
   <ion-content>
-    <div class="list row toggle-row" ng-repeat="class in classes">
-      <div class="col col-67">
-        <h4>{{ class.name }}</h4>
-        <div>{{ class.description }}</div>
-        <div>{{ class.date | date:"MM-dd-yy '@' h:mma" }}</div>
-        <div>{{ class.teacher_name }}</div>
-        <div>end_time: {{ class.end_time | date:"MM-dd-yy '@' h:mma" }}</div>
-        <div>truelocation: {{ class.truelocation }}</div>
-        <div>rate: {{ class.rate }}</div>
-        <div>start_time: {{ class.start_time | date:"MM-dd-yy '@' h:mma" }}</div>
-        <div class="row triangle rating">
-          <div review-directive></div>
-          <h6 style="margin: 8px 0 0 5px">{{ class.reviews.length || 0 }}</h6>
+    <ion-list class="list-with-toggle" can-swipe="listCanSwipe">
+      <ion-item class="class" ng-repeat="class in classes">
+        <ion-option-button class="button-assertive">Cancel</ion-option-button>
+        <div class="row">
+          <div class="col col-75">
+            <div class="row">
+              <h4 ng-click="viewClass(class)">{{ class.name }}</h4>
+            </div>
+            <div class="row triangle rating">
+              <h6>{{ class.date | date:"MM-dd-yy"}} @ {{ class.start_time | date:"h:mma"}}</h6>
+            </div>
+          </div>
+          <div class="col col-25 rate rate-profile">
+            <div>
+              <h5>${{ class.rate }}</h5>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col col-center">
-        <button class="button button-positive" ng-click="review(class)" ng-show="class.reviewable">Review</button>
-      </div>
-    </div>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
