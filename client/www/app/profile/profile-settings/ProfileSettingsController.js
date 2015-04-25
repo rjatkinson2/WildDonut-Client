@@ -22,6 +22,13 @@
       });
     };
 
+    $scope.init = function(){
+      $scope.profile.picture_url = State.picture_url;
+      $scope.profile = State;
+    };
+
+    $scope.init();
+
   }
 
 })();
