@@ -6,7 +6,7 @@
 (function() {
 
   angular
-    .module('wildDonut', ['ionic', 'ui.router', 'facebook', 'ionic.rating', 'ngCookies', 'ngCordova'])
+    .module('wildDonut', ['ionic', 'ui.router', 'facebook', 'ionic.rating', 'ngCookies', 'ngCordova', 'angularFileUpload'])
     .config(function($stateProvider, $urlRouterProvider, FacebookProvider, $ionicConfigProvider) {
 
       // Remove back button text throughout app
