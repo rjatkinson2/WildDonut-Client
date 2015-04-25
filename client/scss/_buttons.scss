@@ -37,7 +37,8 @@
 }
  
 .button-block.account-button:hover,
-.button-block.password-button:hover {
+.button-block.password-button:hover,
+.button-action:hover {
   color: white;
 }
 
@@ -69,6 +70,12 @@
 
 .button-stable.active {
   background-color: #b2b2b2;
+}
+
+.button-action {
+  background-color: $theme-green;
+  color: white;
+  border: none;
 }
 
 // Footer action button

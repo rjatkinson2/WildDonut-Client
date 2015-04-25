@@ -4,9 +4,9 @@
     .module('wildDonut')
     .controller('StudentManageScheduleController', StudentManageScheduleController);
 
-    StudentManageScheduleController.$inject = ['$scope', '$location', 'ClassManager', 'ReviewManager', 'State'];
+    StudentManageScheduleController.$inject = ['$scope', '$location', '$state', 'ClassManager', 'ReviewManager', 'State'];
 
-    function StudentManageScheduleController($scope, $location, ClassManager, ReviewManager, State) {
+    function StudentManageScheduleController($scope, $location, $state, ClassManager, ReviewManager, State) {
 
       $scope.getBookedStudentClasses = function() {
         ClassManager.getBookedStudentClasses().then(function(classes) {
@@ -28,15 +28,16 @@
       };
 
       $scope.studentToggleRoute = function() {
-        $location.path('/' + State.username + '/student/schedule/manage');
+        $state.go('studentSchedule', {username: State.username}, {reload: true});
       };
 
       $scope.teacherToggleRoute = function() {
-        $location.path('/' + State.username + '/teacher/classes/manage');
+        $state.go('teacherSchedule', {username: State.username}, {reload: true});
       };
 
       $scope.init = function() {
         $scope.getBookedStudentClasses();
+        $scope.listCanSwipe = true;
       };
 
       $scope.init();

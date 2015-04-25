@@ -10,29 +10,16 @@
 
     $scope.class_id = $stateParams.id;
 
-    $scope.setDate = function() {
-      var timeOptions = {
-        date: new Date(),
-        mode: 'date',
-        allowOldDates: false,
-        allowFutureDates: true
-      };
-      window.datePicker.show(timeOptions, function(date){
-      });
-    };
-
-    $scope.setTime = function() {
-      var timeOptions = {
-        date: new Date(),
-        mode: 'time'
-      };
-      window.datePicker.show(timeOptions, function(date){
-      });
-    };
-
     $scope.getClass = function(){
       ClassManager.getClass($scope.class_id).then(function(classInfo){
+        // Get the class object
         $scope.classInformation = classInfo;
+
+        // Override the date, start and end time properties in the object with date format
+        // This enables the form fields to populate correctly
+        $scope.classInformation.date = new Date(classInfo.date);
+        $scope.classInformation.start_time = new Date(classInfo.start_time);
+        $scope.classInformation.end_time = new Date(classInfo.end_time);
       });
     };
 
