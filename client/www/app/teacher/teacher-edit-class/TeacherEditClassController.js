@@ -29,8 +29,8 @@
       });
     };
 
-    $scope.upload = function (files) {
-      ImageManager.postSelectedImage(files, State.username, 'user', function(url){
+    $scope.uploadPhoto = function (files) {
+      ImageManager.postSelectedImage(files, State.username, 'class', function(url){
         $scope.classInformation.picture_url = url;
       });
     };
