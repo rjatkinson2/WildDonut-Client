@@ -27,7 +27,7 @@
     function createClass(classInformation){
       return $http({
         method: 'POST',
-        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes',
+        url: 'http://localhost:4568/api/users/' + State.user.username + '/teacher/classes',
         data: classInformation,
         withCredentials: true,
         headers: {
@@ -41,7 +41,7 @@
     function editClass(classInformation, classId){
       return $http({
         method: 'POST',
-        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/' + classId,
+        url: 'http://localhost:4568/api/users/' + State.user.username + '/teacher/classes/' + classId,
         data: classInformation,
         withCredentials: true,
         headers: {
@@ -55,7 +55,7 @@
     function deleteClass(classId){
       return $http({
         method: 'DELETE',
-        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/' + classId,
+        url: 'http://localhost:4568/api/users/' + State.user.username + '/teacher/classes/' + classId,
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
@@ -68,7 +68,7 @@
     function getAllTeacherClasses(){
       return $http({
         method: 'GET',
-        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes',
+        url: 'http://localhost:4568/api/users/' + State.user.username + '/teacher/classes',
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
@@ -81,7 +81,7 @@
     function getBookedTeacherClasses(){
       return $http({
         method: 'GET',
-        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/booked',
+        url: 'http://localhost:4568/api/users/' + State.user.username + '/teacher/classes/booked',
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
@@ -107,7 +107,7 @@
     function getClass(classId){
       return $http({
         method: 'GET',
-        url: 'http://localhost:4568/api/users/' + State.username + '/teacher/classes/' + classId,
+        url: 'http://localhost:4568/api/users/' + State.user.username + '/teacher/classes/' + classId,
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
@@ -120,7 +120,7 @@
     function getBookedStudentClasses(){
       return $http({
         method: 'GET',
-        url: 'http://localhost:4568/api/users/' + State.username + '/student/classes/booked',
+        url: 'http://localhost:4568/api/users/' + State.user.username + '/student/classes/booked',
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json'
@@ -133,7 +133,7 @@
     function bookClass(bookingDetails){
       return $http({
         method: 'POST',
-        url: 'http://localhost:4568/api/users/' + State.username + '/student/classes/booked',
+        url: 'http://localhost:4568/api/users/' + State.user.username + '/student/classes/booked',
         withCredentials: true,
         data: bookingDetails,
         headers: {

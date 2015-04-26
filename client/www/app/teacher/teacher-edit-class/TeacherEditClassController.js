@@ -25,7 +25,7 @@
 
     $scope.updateClass = function(){
       ClassManager.editClass($scope.classInformation, $scope.class_id).then(function(response){
-        $state.go('manageClasses', {username: State.username}, {reload: true});
+        $state.go('manageClasses', {username: State.user.username}, {reload: true});
       });
     };
 

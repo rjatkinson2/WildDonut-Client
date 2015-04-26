@@ -28,9 +28,9 @@
           'Content-Type': 'application/json',
         }
       }).then(function(response){
-        State.username = response.data.username;
-        State.user_id = response.data._id;
-        State.isTeacher = response.data.teacher;
+        State.user.username = response.data.username;
+        State.user.user_id = response.data._id;
+        State.user.isTeacher = response.data.teacher;
         console.log(State);
         console.log(response);
         return response;
@@ -85,7 +85,7 @@
           'Content-Type': 'application/json',
         }
       }).then(function(response){
-        State = {};
+        State.user = {};
         return response;
       });
     }

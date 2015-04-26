@@ -28,11 +28,11 @@
       };
 
       $scope.studentToggleRoute = function() {
-        $state.go('studentSchedule', {username: State.username}, {reload: true});
+        $state.go('studentSchedule', {username: State.user.username}, {reload: true});
       };
 
       $scope.teacherToggleRoute = function() {
-        $state.go('teacherSchedule', {username: State.username}, {reload: true});
+        $state.go('teacherSchedule', {username: State.user.username}, {reload: true});
       };
 
       $scope.init = function() {

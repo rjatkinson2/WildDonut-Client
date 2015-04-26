@@ -19,7 +19,7 @@
       function saveProfileData(user) {
         return $http({
           method: 'POST',
-          url: 'http://localhost:4568/api/users/' + State.username,
+          url: 'http://localhost:4568/api/users/' + State.user.username,
           withCredentials: true,
           headers: {
             'Content-Type': 'application/json'

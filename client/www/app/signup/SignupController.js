@@ -14,7 +14,7 @@
     //interaction with server and signUp process
     $scope.signup = function(){
       Authenticator.signup($scope.user).then(function(response){
-        $location.path('/');
+        $location.path('/browse');
       }).catch(function(error){
         console.log(error);
       });

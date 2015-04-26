@@ -68,11 +68,11 @@
         var payRequest = {};
         // Insert the token into the form so it gets submitted to the server
         payRequest.token = token;
-        payRequest.user_id = State.user_id;
+        payRequest.user_id = State.user.user_id;
         payRequest.class_id = paymentInfo.class_id;
         callback({'payRequest':payRequest}).then(function(response){
           console.log(response);
-          $location.path('/' + State.user_id + '/student/schedule/manage');
+          $location.path('/' + State.user.user_id + '/student/schedule/manage');
         }).catch(function(error){
           console.log(error);
         });
